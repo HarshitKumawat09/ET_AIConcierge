@@ -1,836 +1,1513 @@
-# ET AI Concierge - Personal Finance Platform
-## Team AGI | AI-Powered Financial Advisory Solution
-
-[![Built by Team AGI](https://img.shields.io/badge/Built%20by-Team%20AGI-blue)](https://)
-[![React](https://img.shields.io/badge/React-18-61DAFB?logo=react)](https://react.dev)
-[![Vite](https://img.shields.io/badge/Vite-5-646CFF?logo=vite)](https://vitejs.dev)
-
----
-
-## 📋 Project Overview
-
-**ET AI Concierge** is an innovative AI-powered personal finance platform designed specifically for Indian investors. Built during an intensive hackathon by **Team AGI**, this application combines cutting-edge web technologies with comprehensive financial tools to democratize wealth management.
-
-**Live Demo**: `npm run dev` → http://localhost:5173  
-**Tech Stack**: React 18, Vite, React Router, Context API, Web Speech API
-
----
-
-## 🎯 Problem Statement & Solution
-
-### The Challenge: The "10% Discovery" Problem
-The Economic Times possesses a massive ecosystem—ET Prime, ET Markets, Masterclasses, corporate events, and financial partnerships. However, **most users only discover 10% of what ET offers**. Navigation is fragmented, and users miss tools that perfectly match their life stage and financial goals.
-
-**80% of Indian investors** lack access to personalized financial advisory:
-- Complex tax regulations (80C, HRA, Capital Gains) are difficult to navigate
-- IPO investment decisions require real-time data analysis
-- Goal-based planning is fragmented across multiple apps
-- Premium content remains inaccessible to retail investors
-
-### Our Solution: The 3-Minute Profiler
-**ET AI Concierge** is an intelligent orchestration platform acting as a unified entry point. Instead of forcing users to search, our AI conducts a natural, **3-minute profiling conversation**, maps intent against an **ET Product Knowledge Graph**, and proactively routes users to the right content, tools, or marketplace partners.
-
-**Core Capabilities**:
-- 🤖 **AI-Powered Financial Assistant** with natural language queries
-- 🗣️ **ET Welcome Concierge** - State-machine driven profiling agent
-- 🧭 **Financial Life Navigator** - Product mapping via ChromaDB vector search
-- 📊 **Real-time IPO Tracking** with GMP and subscription analytics
-- 🔄 **Cross-Sell Engine** - Behavioral signal processing for upsells
-- 🎯 **Goal-Based Planning** with visual progress tracking
-- 🏪 **Services Marketplace** - Partner integration (loans, insurance)
-- 📰 **ET Prime Integration** for premium market insights
-- 👨‍👩‍👧‍👦 **Family Wealth Management** for multi-generational planning
-
----
-
-## 🏗️ Technical Architecture
-
-### System Design (Mermaid Diagram)
-
-```mermaid
-flowchart TB
-    subgraph Client["📱 Client Layer"]
-        A[React 18 Application]
-        B[React Router DOM]
-        C[Context API State]
-    end
-
-    subgraph Components["🧩 Component Architecture"]
-        D[Dashboard]
-        E[AI Concierge Chat]
-        F[IPO Center]
-        G[Tax Planner]
-        H[Goal Tracker]
-        I[Document Analyzer]
-        J[Marketplace]
-        K[Family Center]
-    end
-
-    subgraph State["💾 State Management"]
-        L[Auth Context]
-        M[User Data]
-        N[Plan Features]
-    end
-
-    subgraph Storage["🗄️ Data Layer"]
-        O[localStorage]
-        P[Session Cache]
-    end
-
-    A --> D & E & F & G & H & I & J & K
-    A --> B
-    A --> C
-    C --> L
-    L --> M & N
-    M --> O & P
-```
-
-### AI Backend Architecture
-
-```mermaid
-flowchart TB
-    subgraph Client["📱 Entry Points"]
-        A[React 18 Web App]
-        B[Mobile App / Voice]
-    end
-
-    subgraph Orchestration["🧠 LangGraph State Orchestrator"]
-        C[Profiler Agent]
-        D[Product Mapper]
-        E[Cross-Sell Engine]
-        F[Marketplace Agent]
-    end
-
-    subgraph Inference["⚡ LLM Inference"]
-        G[Llama 3.3 70b - Reasoning]
-        H[Llama 3.1 8b - JSON Extraction]
-    end
-
-    subgraph Persistence["🗄️ Intelligence Stores"]
-        I[(PostgreSQL - Profiles)]
-        J[(ChromaDB - ET Products)]
-    end
-
-    A & B --> Orchestration
-    Orchestration <--> Inference
-    Orchestration <--> Persistence
-```
-
-### Technology Stack
-
-| Layer | Technology | Implementation Details |
-|-------|-----------|----------------------|
-| **Frontend Framework** | React 18 | Functional components, Context API state |
-| **Build Tool** | Vite 5 | HMR, optimized production builds |
-| **Routing** | React Router DOM v6 | Protected routes, lazy loading ready |
-| **Styling** | CSS3 + Variables | Glassmorphism design system, dark mode |
-| **Icons** | Lucide React | 500+ icons, consistent stroke width |
-| **State Management** | React Context | useAuth hook, localStorage persistence |
-| **AI Orchestration** | LangGraph | Multi-agent state machine for profiling |
-| **LLM Inference** | Groq API | Llama 3.3 70b (reasoning), Llama 3.1 8b (JSON) |
-| **Backend API** | FastAPI (Python 3.11) | ASGI framework, WebSocket support |
-| **Vector Search** | ChromaDB | ET Product Knowledge Graph embeddings |
-| **Database** | PostgreSQL (asyncpg) | User profiles, session memory |
-| **Voice Features** | Web Speech API | Speech recognition and synthesis |
-| **Document Processing** | FileReader API | PDF and image analysis |
-
----
-
-## ✨ Core Features Implemented
-
-### 1. 🗣️ ET Welcome Concierge (The 3-Minute Profiler)
-
-```
-┌─────────────────────────────────────────────────────────────────┐
-│  The 3-Minute Decision Flow                                      │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│  Turn 0: Greeting                                                │
-│  AI: "What kind of work keeps you busy these days?"           │
-│  → LLM extracts Role, Industry, Seniority                      │
-│                                                                 │
-│  Turn 2: Track Split                                           │
-│  ┌──────────────┬────────────────┬─────────────────┐             │
-│  │  CXO Track   │ Investor Track │ Professional    │             │
-│  ├──────────────┼────────────────┼─────────────────┤             │
-│  │ Org queries  │ Trading prefs  │ Skill building  │             │
-│  └──────────────┴────────────────┴─────────────────┘             │
-│                                                                 │
-│  Turn 3: Life Event Probe                                        │
-│  Detects: New job, Marriage, Inheritance, House purchase       │
-│  → Switches from "Content-First" to "Marketplace-First"         │
-│                                                                 │
-│  Resolution: Product Recommendation via ChromaDB                 │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
-```
-
-**Dynamic Branching**:
-- Routes CXOs to organizational queries
-- Routes Investors to trading preferences
-- Routes Professionals to skill-building content
-
-**Life Event Detection**:
-- Probes for major financial shifts (New job, marriage, inheritance)
-- Instantly pivots from "Content-First" to "Marketplace-First" recommendations
-
-### 2. 🧭 Financial Life Navigator (Product Mapper)
-
-Maps user extracted profile against the entire ET ecosystem:
-
-```mermaid
-flowchart LR
-    A[User Profile] --> B[ChromaDB Vector Search]
-    B --> C[ET Product Embeddings]
-    C --> D[Top K Matches]
-    D --> E[Personalized Payoff Narrative]
-    E --> F[ET Prime / ET Markets / Masterclasses]
-```
-
-**Capabilities**:
-- Uses ChromaDB for vector similarity searches
-- Generates personalized payoff narratives
-- Explains why specific ET tools fit exact user situations
-
-### 3. 🤖 AI Concierge (Conversational Finance)
-
-```
-┌─────────────────────────────────────────────────────────────┐
-│  USER INPUT                      │  SYSTEM RESPONSE          │
-├──────────────────────────────────┼───────────────────────────┤
-│  "How much should I invest in    │  → Personalized SIP       │
-│   SIP for retirement?"           │    recommendation based   │
-│                                  │    on age & risk profile  │
-├──────────────────────────────────┼───────────────────────────┤
-│  "Explain 80C deductions"        │  → Section-wise breakdown │
-│                                  │    with limit indicators  │
-├──────────────────────────────────┼───────────────────────────┤
-│  🎤 Voice Input                  │  → Speech-to-text query   │
-│                                  │    processing             │
-└─────────────────────────────────────────────────────────────┘
-```
-
-**Technical Highlights**:
-- Natural language processing simulation
-- Context-aware responses based on user profile
-- Voice input/output using Web Speech API
-- Real-time query suggestions
-
-### 4. 🔄 ET Ecosystem Cross-Sell Engine
-
-A background processing engine that ingests behavioral signals (pages read, time-on-site, click patterns) to trigger timely, context-aware upsells without disrupting the user experience.
-
-**Signal Processing**:
-- Page engagement tracking
-- Content consumption patterns
-- Feature usage analytics
-- Predictive churn indicators
-
-**Trigger Mechanisms**:
-- Context-aware product recommendations
-- Timely upgrade prompts
-- Feature discovery nudges
-
-### 5. 🏪 Services Marketplace Agent
-
-When an immediate financial need is detected (e.g., a "life event" like buying a house), the LangGraph orchestrator hands the conversation over to the Marketplace Agent, connecting the user with partner services (HDFC, Bajaj, SBI) for credit, loans, and insurance.
-
-**Integration Capabilities**:
-- Loan eligibility calculators
-- Insurance gap analysis
-- Credit score monitoring
-- Instant quote comparisons
-
-### 6. 📈 IPO Command Center
-
-```mermaid
-flowchart LR
-    A[IPO Listing] --> B{AI Analysis Engine}
-    B --> C[Grey Market Premium]
-    B --> D[Subscription Status]
-    B --> E[Recommendation]
-    C & D & E --> F[Visual Dashboard]
-    F --> G[Subscribe/Avoid/Neutral]
-```
-
-**Features**:
-- Live IPO calendar with countdown timers
-- GMP tracking with trend indicators
-- Category-wise subscription (Retail/NII/QIB)
-- ASBA simulation with UPI integration
-- Historical performance analytics
-- SEBI-compliant AI recommendations
-
-### 3. 🎯 Goal Tracker
-
-```mermaid
-flowchart TB
-    A[Goal Creation] --> B[SMART Parameters]
-    B --> C[Timeline]
-    B --> D[Target Amount]
-    B --> E[Risk Profile]
-    C & D & E --> F[AI Projection Engine]
-    F --> G[Monthly SIP Required]
-    F --> H[Success Probability]
-    G & H --> I[Visual Progress]
-    I --> J[Milestone Alerts 🎉]
-```
-
-**Capabilities**:
-- Multiple goal tracking (Retirement, Education, Home, Emergency)
-- Visual progress with animated charts
-- Monthly SIP calculator with inflation adjustment
-- Milestone celebration system
-- Goal adjustment for life changes
-
-### 4. 💰 Tax Planner
-
-| Section | Feature | Logic |
-|---------|---------|-------|
-| **80C** | ELSS, PPF, LIC, FD | ₹1.5L limit tracker |
-| **80D** | Health Insurance | Multi-scenario calculations |
-| **HRA** | Rent Exemption | Metro vs Non-metro |
-| **LTCG** | Equity & Property | Indexation benefits |
-| **STCG** | Short-term gains | Tax rate application |
-
-### 5. 📰 ET Prime Content Hub
-
-```
-┌────────────────────────────────────────────────────────────┐
-│  CONTENT TIERING                                           │
-├────────────────────────────────────────────────────────────┤
-│  🔓 FREE TIER           │  ⭐ PRO/ELITE TIER               │
-│  • Market updates         │  • Exclusive analysis           │
-│  • Basic news             │  • Expert stock picks          │
-│                           │  • ET Now video content        │
-│                           │  • Sector deep dives           │
-│                           │  • Real-time alerts            │
-└────────────────────────────────────────────────────────────┘
-```
-
-### 6. 👨‍👩‍👧‍👦 Family Center (Elite Tier)
-
-- Consolidated family portfolio view
-- Goal sharing and collaborative planning
-- Role-based access control
-- Estate planning calculators
-- Family insurance gap analysis
-
----
-
-## 🎨 UI/UX Design System
-
-### Glassmorphism Theme
-```css
-:root {
-  --glass: rgba(15, 23, 42, 0.6);
-  --glass-border: rgba(255, 255, 255, 0.1);
-  --accent: #38bdf8;
-  --primary: #0f172a;
-  --text-dim: #94a3b8;
-}
-```
-
-### Navigation Structure
-
-```
-┌────────────────────────────────────────────────────────────┐
-│  🏠 AI Concierge                    [🔍 Search]  [👤 User] │
-├────────────────────────────────────────────────────────────┤
-│  Dashboard │ AI Assistant │ Simulator │ IPO │ Tools ▼      │
-└────────────────────────────────────────────────────────────┘
-                           │
-        ┌──────────────────┼──────────────────┐
-        ▼                  ▼                  ▼
-   ┌─────────┐      ┌─────────┐       ┌──────────┐
-   │Tax      │      │Goal     │       │Document  │
-   │Planner  │      │Tracker  │       │Analyzer  │
-   └─────────┘      └─────────┘       └──────────┘
-```
-
----
-
-## 💎 Subscription Model
-
-### Tier Comparison
-
-| Feature | Basic (Free) | Pro (₹4,999/yr) | Elite (₹14,999/yr) |
-|---------|-------------|-----------------|-------------------|
-| **AI Queries/Day** | 5 | 50 | Unlimited |
-| **Portfolio Projections** | ❌ | ✅ | ✅ |
-| **Real-time Alerts** | ❌ | ✅ | ✅ |
-| **ET Prime Access** | ❌ | ✅ | ✅ |
-| **Family Portfolio** | ❌ | ❌ | ✅ |
-| **Private Summits** | ❌ | ❌ | ✅ |
-| **Masterclasses** | ❌ | ❌ | ✅ |
-| **Dedicated Support** | ❌ | ❌ | ✅ |
-
----
-
-## 🛣️ Implementation Roadmap
-
-### ✅ Phase 1: Foundation (Completed)
-```
-┌────────────────────────────────────────────────────────────┐
-│  ✅ React 18 Application Architecture                        │
-│  ✅ Glassmorphism Design System                             │
-│  ✅ Component Library (13 major components)                  │
-│  ✅ AI Concierge Chat Interface                             │
-│  ✅ IPO Command Center (GMP, Subscriptions)                │
-│  ✅ Goal Tracker with Visualizations                        │
-│  ✅ Tax Planner (80C, HRA, LTCG, STCG)                     │
-│  ✅ Document Analyzer Framework                             │
-│  ✅ Marketplace Integration                                 │
-│  ✅ ET Prime Content Hub                                    │
-│  ✅ Family Center (Elite Tier)                              │
-│  ✅ Subscription Management                                 │
-│  ✅ Responsive Design (Mobile/Tablet/Desktop)              │
-│  ✅ Protected Routes & Authentication                      │
-└────────────────────────────────────────────────────────────┘
-```
-
-### 🚀 Phase 2: AI Enhancement (Q2 2025)
-- OpenAI GPT-4 / Claude API integration
-- Real-time market data APIs (NSE/BSE)
-- Predictive portfolio analytics
-- AI-powered stock screener
-- Voice assistant (Hindi, Tamil, Telugu)
-- React Native mobile app
-- Broker API integrations (Zerodha, Upstox, etc.)
-
-### 📊 Phase 3: Scale & Intelligence (Q3 2025)
-```mermaid
-flowchart TB
-    A[Backend Infrastructure] --> B[Node.js + Express]
-    A --> C[MongoDB Database]
-    A --> D[Redis Cache]
-    
-    E[ML Pipeline] --> F[Recommendation Engine]
-    E --> G[Risk Analysis Model]
-    E --> H[Fraud Detection]
-    
-    I[New Features] --> J[Tax Filing Assistant]
-    I --> K[Crypto Portfolio]
-    I --> L[International Markets]
-```
-
-### 🏢 Phase 4: Enterprise (Q4 2025)
-- Family Office Suite
-- AI Estate Planning
-- Community Features (Forums, Q&A)
-- Enterprise API for Partners
-- White-label Solutions
-
----
-
-## 🔧 Development Setup
-
-```bash
-# Prerequisites: Node.js ≥ 18, npm ≥ 9
-
-# Clone & Install
-git clone https://github.com/team-agi/et-ai-concierge.git
-cd et-ai-concierge
-npm install
-
-# Development
-npm run dev        # Vite dev server → localhost:5173
-
-# Production
-npm run build      # Optimized build in dist/
-npm run preview    # Preview production build
-```
-
----
-
-## 📈 Key Achievements
-
-### Technical Metrics
-- **Components Built**: 13 major feature components
-- **Lines of Code**: 15,000+ production-ready
-- **Routes**: 15 protected + 2 public routes
-- **Features**: 8 core modules, fully functional
-- **Design System**: Complete glassmorphism implementation
-- **Responsive**: Cross-device optimized
-
-### Business Impact
-- **Target Market**: 150M+ Indian retail investors
-- **TAM**: ₹5,000+ Cr opportunity
-- **Revenue Streams**: Subscriptions, Commissions, Ads
-- **User Segments**: 3 tiers (Basic, Pro, Elite)
-
----
-
-## 👥 Team AGI
-
-| Role | Expertise |
-|------|-----------|
-| **Frontend Engineers** | React, UI Architecture, State Management |
-| **UI/UX Designers** | Glassmorphism, Responsive Design, Animations |
-| **Finance Experts** | Tax Logic, Investment Algorithms, Compliance |
-| **Product Strategy** | Feature Roadmap, Market Analysis |
-
----
-
-## 📝 Component API Documentation
-
-### AuthContext
-```javascript
-const { 
-  user, 
-  isAuthenticated, 
-  currentPlan, 
-  login, 
-  logout 
-} = useAuth();
-```
-
-### Route Structure
-```
-/Public Routes
-├── /login          → Login.jsx
-└── /signup         → Signup.jsx
-
-/Protected Routes
-├── /               → Dashboard.jsx
-├── /concierge      → AI Concierge
-├── /simulator      → Portfolio Simulator
-├── /ipo            → IPO Center
-├── /tax-planner    → Tax Planner
-├── /goals          → Goal Tracker
-├── /documents      → Document Analyzer
-├── /marketplace    → Marketplace
-├── /et-prime       → ET Prime Content
-├── /family         → Family Center (Elite)
-└── /business-model → Revenue Info
-```
-
----
-
-<div align="center">
-
-### 🚀 Built with Passion by Team AGI
-
-*Revolutionizing Personal Finance for India*
-      └─────────┘    └─────────┘   └──────────┘
-```
-
----
-
-## 🛠️ Technology Stack
-
-### Frontend Architecture
-```
-┌─────────────────────────────────────────────────────────┐
-│                    PRESENTATION LAYER                   │
-├─────────────────────────────────────────────────────────┤
-│  React 18        │  Component-based UI architecture     │
-│  React Router    │  Client-side routing                 │
-│  Lucide Icons    │  Modern iconography                  │
-│  CSS3 Variables  │  Dynamic theming                     │
-└─────────────────────────────────────────────────────────┘
-                           │
-┌─────────────────────────────────────────────────────────┐
-│                    STATE MANAGEMENT                     │
-├─────────────────────────────────────────────────────────┤
-│  React Context   │  Global auth & user state            │
-│  useReducer      │  Complex form state                  │
-│  localStorage    │  Persistent session                  │
-└─────────────────────────────────────────────────────────┘
-                           │
-┌─────────────────────────────────────────────────────────┐
-│                    DATA & APIs                          │
-├─────────────────────────────────────────────────────────┤
-│  Mock Data Layer │  Simulated backend responses         │
-│  FileReader API  │  Document processing                 │
-│  Web Speech API  │  Voice input/output                  │
-└─────────────────────────────────────────────────────────┘
-```
-
-### Key Technologies
-| Category | Technology | Purpose |
-|----------|-----------|---------|
-| **Framework** | React 18 | UI Development |
-| **Build Tool** | Vite 5 | Fast development & building |
-| **Routing** | React Router DOM | SPA Navigation |
-| **Icons** | Lucide React | Beautiful icon system |
-| **Styling** | CSS3 + Variables | Dynamic theming |
-| **State** | React Context | Global state management |
-| **Storage** | localStorage | Client-side persistence |
-
----
-
-## 📱 Screenshots
-
-<!-- Add your screenshots below -->
-
-### 🏠 Dashboard
-![Dashboard Screenshot](screenshots/dashboard.png)
-> *Your financial command center - portfolio overview, quick actions, and smart insights*
-
-### 🤖 AI Concierge
-![AI Concierge Screenshot](screenshots/concierge.png)
-> *Conversational AI that understands your financial needs*
-
-### 📈 IPO Center
-![IPO Center Screenshot](screenshots/ipo.png)
-> *Never miss an opportunity - live GMP, subscriptions, and AI recommendations*
-
-### 🎯 Goal Tracker
-![Goal Tracker Screenshot](screenshots/goals.png)
-> *Visual goal tracking with milestone celebrations*
-
-### 🏪 Marketplace
-![Marketplace Screenshot](screenshots/marketplace.png)
-> *Curated financial products tailored to your profile*
-
----
-
-## 🚀 Getting Started
-
-### Prerequisites
-- Node.js 18+ 
-- npm 9+ or yarn 1.22+
-
-### Installation
-
-```bash
-# Clone the repository
-git clone https://github.com/your-org/et-ai-concierge.git
-
-# Navigate to project
-cd et-ai-concierge
-
-# Install dependencies
-npm install
-
-# Start development server
-npm run dev
-```
-
-The application will be available at `http://localhost:5173`
-
-### Build for Production
-
-```bash
-npm run build
-```
-
-Output will be in `dist/` folder, ready for deployment.
-
----
-
-## 📊 System Architecture
-
-### High-Level Architecture
-```
-┌─────────────────────────────────────────────────────────────────────────┐
-│                         ET AI CONCIERGE PLATFORM                        │
-├─────────────────────────────────────────────────────────────────────────┤
-│                                                                         │
-│  ┌─────────────────┐         ┌─────────────────────────────────────┐ │
-│  │   USER LAYER    │         │        APPLICATION LAYER            │ │
-│  │                 │         │                                     │ │
-│  │  • Web Browser  │────────▶│  ┌──────────┐  ┌──────────────┐   │ │
-│  │  • Mobile App   │  HTTPS  │  │  React   │  │   Context    │   │ │
-│  │  • Tablet       │         │  │ Frontend │  │   Providers  │   │ │
-│  └─────────────────┘         │  └────┬─────┘  └──────┬───────┘   │ │
-│                              │       │               │            │ │
-│                              │  ┌────┴───────────────┴────┐       │ │
-│                              │  │    Component Layer       │       │ │
-│                              │  │  ┌─────────────────┐    │       │ │
-│                              │  │  │ Dashboard       │    │       │ │
-│                              │  │  │ AI Concierge    │    │       │ │
-│                              │  │  │ IPO Center      │    │       │ │
-│                              │  │  │ Tax Planner     │    │       │ │
-│                              │  │  │ Goal Tracker    │    │       │ │
-│                              │  │  │ Document Analyzer│   │       │ │
-│                              │  │  │ Marketplace     │    │       │ │
-│                              │  │  │ ET Prime        │    │       │ │
-│                              │  │  │ Family Center   │    │       │ │
-│                              │  │  └─────────────────┘    │       │ │
-│                              │  └──────────────────────────┘       │ │
-│                              │                                      │ │
-│                              │  ┌─────────────────────────────┐    │ │
-│                              │  │     DATA LAYER              │    │ │
-│                              │  │  ┌─────────────────────┐    │    │ │
-│                              │  │  │ localStorage        │    │    │ │
-│                              │  │  │ Session Management  │    │    │ │
-│                              │  │  │ User Preferences    │    │    │ │
-│                              │  │  │ Cached Data         │    │    │ │
-│                              │  │  └─────────────────────┘    │    │ │
-│                              │  └─────────────────────────────┘    │ │
-│                              └─────────────────────────────────────┘ │
-│                                                                         │
-└─────────────────────────────────────────────────────────────────────────┘
-```
-
-### Data Flow Diagram
-```
-User Action
-    │
-    ▼
-┌──────────────┐
-│   React      │◀─── State Update ───┐
-│  Component   │                      │
-└──────┬───────┘                      │
-       │                              │
-       │ User Interaction             │
-       ▼                              │
-┌──────────────┐                     │
-│   Context    │                     │
-│  Provider    │─────────────────────┘
-└──────┬───────┘
-       │
-       │ Persist/Retrieve
-       ▼
-┌──────────────┐
-│ localStorage │
-│   (Browser)  │
-└──────────────┘
-```
-
----
-
-## 💎 Subscription Tiers
-
-### 🥉 ET Basic (Free)
-- 5 AI queries per day
-- Basic portfolio tracking
-- IPO calendar access
-- Standard market updates
-
-### 🥈 ET Pro (₹4,999/year)
-*Everything in Basic, plus:*
-- 50 AI queries per day
-- Portfolio projections
-- Real-time alerts
-- ET Prime access
-- Gap analysis
-- Advanced tax planning
-
-### 🥇 ET Elite (₹14,999/year)
-*Everything in Pro, plus:*
-- Unlimited AI queries
-- Family portfolio management
-- Private summits access
-- Masterclass sessions
-- Dedicated hybrid support
-- Exclusive research reports
-
-```
-┌─────────────────────────────────────────────────────────┐
-│  COMPARISON CHART                                       │
-├────────────────────────┬──────────┬──────────┬──────────┤
-│  Feature               │  Basic   │   Pro    │  Elite   │
-├────────────────────────┼──────────┼──────────┼──────────┤
-│  AI Queries/Day        │    5     │    50    │    ∞     │
-│  Portfolio Projections │    ✗     │    ✓     │    ✓     │
-│  Real-time Alerts      │    ✗     │    ✓     │    ✓     │
-│  ET Prime Access       │    ✗     │    ✓     │    ✓     │
-│  Family Portfolio      │    ✗     │    ✗     │    ✓     │
-│  Private Summits       │    ✗     │    ✗     │    ✓     │
-│  Masterclasses         │    ✗     │    ✗     │    ✓     │
-│  Dedicated Support     │    ✗     │    ✗     │    ✓     │
-└────────────────────────┴──────────┴──────────┴──────────┘
-```
-
----
-
-## 🔐 Security & Compliance
-
-- **Data Encryption**: All sensitive data encrypted at rest
-- **Secure Authentication**: JWT-based session management
-- **Privacy First**: User data never sold to third parties
-- **SEBI Guidelines**: All investment advice SEBI-compliant
-- **GDPR Ready**: Data portability and deletion rights
-
----
-
-## 🌟 Unique Selling Points
-
-### 1. 🇮🇳 India-First Design
-- Tax calculations tailored for Indian tax laws
-- Support for Indian financial instruments (PPF, NPS, ELSS, etc.)
-- Regional language support (Hindi, Tamil, Telugu coming soon)
-- UPI & ASBA integration for seamless transactions
-
-### 2. 🤖 AI-Powered Insights
-- Natural language financial queries
-- Predictive portfolio analysis
-- Personalized goal recommendations
-- Document intelligence
-
-### 3. 📰 ET Brand Trust
-- 33+ years of Economic Times financial expertise
-- Verified market data and analysis
-- Award-winning journalism integration
-- SEBI-registered advisory backing
-
-### 4. 🎯 Holistic Financial View
-- Not just stocks - goals, taxes, insurance, estate
-- Family-wide financial planning
-- Life-stage based recommendations
-- Integrated marketplace for execution
-
----
-
-## 🛣️ Roadmap
-
-### Q2 2025
-- [ ] Mobile app launch (iOS & Android)
-- [ ] Voice assistant in regional languages
-- [ ] AI-powered stock screener
-- [ ] Integration with 50+ brokers
-
-### Q3 2025
-- [ ] Wealth management for HNIs
-- [ ] AI tax filing assistant
-- [ ] Crypto portfolio tracking
-- [ ] International market access
-
-### Q4 2025
-- [ ] Family office features
-- [ ] AI estate planning
-- [ ] Smart notifications with ML
-- [ ] Community features
-
----
-
-## 👥 Team AGI
-
-Built with ❤️ by **Team AGI** for The Economic Times
-
-| Role | Contribution |
-|------|-------------|
-| **Frontend Engineers** | React architecture, UI/UX implementation |
-| **AI Specialists** | Conversational AI, recommendation engine |
-| **Finance Experts** | Tax logic, investment algorithms, compliance |
-| **Design Team** | Glassmorphism UI, user experience flows |
-
----
-
-## 📞 Support & Contact
-
-- 🌐 Website: [https://etconcierge.economictimes.com](https://)
-- 📧 Email: support@etconcierge.com
-- 💬 Live Chat: Available in-app
-- 📱 Helpline: 1800-ET-HELP (1800-38-4357)
-
----
-
-## 📝 License
-
-© 2024 The Economic Times - Times Internet Limited. All rights reserved.
-
----
-
-<div align="center">
-
-### 🚀 Ready to Transform Your Financial Future?
-
-**[Get Started Today →](https://etconcierge.economictimes.com)**
-
-*Built by Team AGI • Powered by The Economic Times • Made in India 🇮🇳*
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ET AI Concierge — Team AGI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Mono:wght@400;500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink: #050A14;
+    --gold: #F0A500;
+    --gold-light: #FFD060;
+    --silver: #E8EDF5;
+    --mist: #94A3B8;
+    --glass: rgba(255,255,255,0.04);
+    --glass-border: rgba(255,255,255,0.08);
+    --accent-blue: #38BDF8;
+    --accent-green: #34D399;
+    --accent-rose: #FB7185;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Outfit', sans-serif;
+    background: var(--ink);
+    color: var(--silver);
+    overflow-x: hidden;
+    cursor: none;
+  }
+
+  /* Custom cursor */
+  .cursor {
+    width: 10px; height: 10px;
+    background: var(--gold);
+    border-radius: 50%;
+    position: fixed; top: 0; left: 0;
+    pointer-events: none; z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: transform 0.08s ease, background 0.2s;
+    mix-blend-mode: difference;
+  }
+  .cursor-ring {
+    width: 36px; height: 36px;
+    border: 1px solid rgba(240,165,0,0.5);
+    border-radius: 50%;
+    position: fixed; top: 0; left: 0;
+    pointer-events: none; z-index: 9998;
+    transform: translate(-50%, -50%);
+    transition: transform 0.18s ease, opacity 0.3s;
+  }
+
+  /* ======= HERO ======= */
+  .hero {
+    min-height: 100vh;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    position: relative;
+    padding: 6rem 2rem 4rem;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute; inset: 0; z-index: 0;
+    background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(240,165,0,0.12) 0%, transparent 70%),
+                radial-gradient(ellipse 60% 40% at 80% 80%, rgba(56,189,248,0.08) 0%, transparent 60%),
+                radial-gradient(ellipse 40% 30% at 10% 60%, rgba(52,211,153,0.06) 0%, transparent 50%);
+  }
+
+  .hero-grid {
+    position: absolute; inset: 0; z-index: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse 90% 70% at 50% 50%, black 30%, transparent 100%);
+  }
+
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(240,165,0,0.1);
+    border: 1px solid rgba(240,165,0,0.3);
+    border-radius: 100px;
+    padding: 6px 18px;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--gold);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 2.5rem;
+    position: relative; z-index: 1;
+    animation: fadeSlide 0.8s ease both;
+  }
+  .hero-badge::before {
+    content: '';
+    width: 6px; height: 6px;
+    background: var(--gold);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(0.7); }
+  }
+
+  .hero-eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--mist);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 1.2rem;
+    position: relative; z-index: 1;
+    animation: fadeSlide 0.9s ease 0.1s both;
+  }
+
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3.5rem, 9vw, 8rem);
+    font-weight: 900;
+    line-height: 0.95;
+    text-align: center;
+    position: relative; z-index: 1;
+    animation: fadeSlide 1s ease 0.2s both;
+    letter-spacing: -0.02em;
+  }
+
+  .hero-title .et {
+    color: var(--gold);
+    font-style: italic;
+  }
+
+  .hero-title .ai {
+    background: linear-gradient(135deg, var(--accent-blue), var(--accent-green));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-subtitle {
+    max-width: 560px;
+    text-align: center;
+    font-size: 1.1rem;
+    line-height: 1.75;
+    color: var(--mist);
+    font-weight: 300;
+    margin: 2rem auto 0;
+    position: relative; z-index: 1;
+    animation: fadeSlide 1s ease 0.35s both;
+  }
+
+  .hero-cta-row {
+    display: flex; gap: 1rem; flex-wrap: wrap;
+    align-items: center; justify-content: center;
+    margin-top: 3rem;
+    position: relative; z-index: 1;
+    animation: fadeSlide 1s ease 0.5s both;
+  }
+
+  .btn-primary {
+    padding: 14px 32px;
+    background: var(--gold);
+    color: var(--ink);
+    border: none; border-radius: 6px;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600; font-size: 0.95rem;
+    cursor: none;
+    transition: all 0.25s ease;
+    letter-spacing: 0.02em;
+    box-shadow: 0 0 40px rgba(240,165,0,0.3);
+  }
+  .btn-primary:hover {
+    background: var(--gold-light);
+    box-shadow: 0 0 60px rgba(240,165,0,0.5);
+    transform: translateY(-2px);
+  }
+
+  .btn-ghost {
+    padding: 14px 32px;
+    background: transparent;
+    color: var(--silver);
+    border: 1px solid var(--glass-border);
+    border-radius: 6px;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 400; font-size: 0.95rem;
+    cursor: none;
+    transition: all 0.25s ease;
+  }
+  .btn-ghost:hover {
+    border-color: rgba(255,255,255,0.2);
+    background: var(--glass);
+  }
+
+  .hero-stats {
+    display: flex; gap: 3rem; flex-wrap: wrap;
+    align-items: center; justify-content: center;
+    margin-top: 4rem;
+    position: relative; z-index: 1;
+    animation: fadeSlide 1s ease 0.65s both;
+  }
+
+  .stat { text-align: center; }
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.4rem; font-weight: 700;
+    color: var(--gold);
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: 0.75rem; color: var(--mist);
+    letter-spacing: 0.08em; margin-top: 4px;
+    text-transform: uppercase;
+  }
+
+  .stat-divider {
+    width: 1px; height: 40px;
+    background: var(--glass-border);
+  }
+
+  /* ======= SCROLL INDICATOR ======= */
+  .scroll-hint {
+    position: absolute; bottom: 2.5rem;
+    left: 50%; transform: translateX(-50%);
+    z-index: 1;
+    display: flex; flex-direction: column;
+    align-items: center; gap: 8px;
+    animation: fadeSlide 1s ease 1s both;
+  }
+  .scroll-hint span {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem; color: var(--mist);
+    letter-spacing: 0.15em; text-transform: uppercase;
+  }
+  .scroll-line {
+    width: 1px; height: 40px;
+    background: linear-gradient(to bottom, var(--mist), transparent);
+    animation: scrollAnim 2s ease-in-out infinite;
+  }
+  @keyframes scrollAnim {
+    0% { transform: scaleY(0); transform-origin: top; }
+    50% { transform: scaleY(1); transform-origin: top; }
+    51% { transform: scaleY(1); transform-origin: bottom; }
+    100% { transform: scaleY(0); transform-origin: bottom; }
+  }
+
+  /* ======= SECTION BASE ======= */
+  section { padding: 7rem 2rem; }
+  .container { max-width: 1200px; margin: 0 auto; }
+
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem; color: var(--gold);
+    letter-spacing: 0.2em; text-transform: uppercase;
+    margin-bottom: 1rem;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1; max-width: 80px; height: 1px;
+    background: rgba(240,165,0,0.4);
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 700; line-height: 1.15;
+    margin-bottom: 1rem;
+  }
+
+  .section-body {
+    font-size: 1.05rem; color: var(--mist);
+    line-height: 1.8; max-width: 580px;
+  }
+
+  /* ======= PROBLEM STRIP ======= */
+  .problem-strip {
+    background: rgba(251,113,133,0.06);
+    border-top: 1px solid rgba(251,113,133,0.15);
+    border-bottom: 1px solid rgba(251,113,133,0.15);
+    padding: 4rem 2rem;
+  }
+
+  .problem-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 4rem; align-items: center;
+  }
+
+  .problem-stat-big {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(4rem, 9vw, 7rem);
+    font-weight: 900; color: var(--accent-rose);
+    line-height: 1;
+    opacity: 0.9;
+  }
+
+  .problem-items {
+    display: flex; flex-direction: column; gap: 1.2rem;
+  }
+
+  .problem-item {
+    display: flex; align-items: flex-start; gap: 14px;
+    padding: 1rem 1.2rem;
+    background: rgba(251,113,133,0.05);
+    border: 1px solid rgba(251,113,133,0.1);
+    border-radius: 8px;
+    font-size: 0.95rem; line-height: 1.5;
+    color: var(--silver);
+  }
+
+  .problem-item .icon {
+    width: 22px; height: 22px;
+    flex-shrink: 0;
+    color: var(--accent-rose);
+    font-size: 1rem; margin-top: 1px;
+  }
+
+  /* ======= FEATURES GRID ======= */
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.5px;
+    background: var(--glass-border);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    overflow: hidden;
+    margin-top: 4rem;
+  }
+
+  .feature-card {
+    background: var(--ink);
+    padding: 2.2rem;
+    transition: background 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  .feature-card::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: var(--card-glow, rgba(240,165,0,0.05));
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .feature-card:hover::before { opacity: 1; }
+
+  .feature-icon {
+    font-size: 1.8rem; margin-bottom: 1.2rem;
+    display: block;
+  }
+
+  .feature-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem; font-weight: 700;
+    color: var(--silver);
+    margin-bottom: 0.6rem;
+  }
+
+  .feature-body {
+    font-size: 0.88rem; color: var(--mist);
+    line-height: 1.7;
+  }
+
+  .feature-tag {
+    display: inline-block;
+    margin-top: 1rem;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    padding: 3px 10px;
+    border-radius: 100px;
+    background: var(--tag-bg, rgba(240,165,0,0.1));
+    color: var(--tag-color, var(--gold));
+    border: 1px solid var(--tag-border, rgba(240,165,0,0.2));
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  /* ======= ARCHITECTURE ======= */
+  .arch-section {
+    background: linear-gradient(180deg, var(--ink) 0%, rgba(5,10,20,0.97) 100%);
+  }
+
+  .arch-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 2rem; margin-top: 3rem;
+  }
+
+  .arch-box {
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    padding: 2rem;
+    background: var(--glass);
+    backdrop-filter: blur(10px);
+  }
+
+  .arch-box-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem; color: var(--gold);
+    letter-spacing: 0.15em; text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid var(--glass-border);
+  }
+
+  .layer-item {
+    display: flex; align-items: center; gap: 12px;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.03);
+    font-size: 0.88rem;
+  }
+  .layer-item:last-child { border-bottom: none; }
+
+  .layer-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .layer-name { color: var(--silver); font-weight: 500; min-width: 120px; }
+  .layer-desc { color: var(--mist); font-size: 0.82rem; }
+
+  /* ======= FLOW DIAGRAM ======= */
+  .flow-diagram {
+    margin-top: 4rem;
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 3rem;
+    background: var(--glass);
+    position: relative; overflow: hidden;
+  }
+
+  .flow-diagram::before {
+    content: '';
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, rgba(56,189,248,0.08), transparent 70%);
+    pointer-events: none;
+  }
+
+  .flow-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem; color: var(--gold);
+    letter-spacing: 0.2em; text-transform: uppercase;
+    margin-bottom: 2.5rem;
+    text-align: center;
+  }
+
+  .flow-row {
+    display: flex; align-items: center; justify-content: center;
+    gap: 0; flex-wrap: wrap;
+  }
+
+  .flow-node {
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    font-size: 0.82rem; font-weight: 500;
+    text-align: center;
+    min-width: 120px;
+    transition: transform 0.2s;
+  }
+  .flow-node:hover { transform: translateY(-3px); }
+
+  .flow-node.user {
+    background: rgba(52,211,153,0.1);
+    border: 1px solid rgba(52,211,153,0.3);
+    color: var(--accent-green);
+  }
+  .flow-node.ai {
+    background: rgba(56,189,248,0.1);
+    border: 1px solid rgba(56,189,248,0.3);
+    color: var(--accent-blue);
+  }
+  .flow-node.engine {
+    background: rgba(240,165,0,0.1);
+    border: 1px solid rgba(240,165,0,0.3);
+    color: var(--gold);
+  }
+  .flow-node.output {
+    background: rgba(251,113,133,0.1);
+    border: 1px solid rgba(251,113,133,0.3);
+    color: var(--accent-rose);
+  }
+
+  .flow-arrow {
+    font-size: 1.2rem; color: var(--mist);
+    margin: 0 0.5rem;
+  }
+
+  .flow-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem; color: var(--mist);
+    text-align: center; margin-top: 4px;
+    letter-spacing: 0.05em;
+  }
+
+  /* ======= PROFILER TIMELINE ======= */
+  .profiler-section {
+    position: relative;
+    background: linear-gradient(135deg, rgba(240,165,0,0.03) 0%, transparent 60%);
+  }
+
+  .timeline {
+    margin-top: 3.5rem;
+    display: flex; flex-direction: column; gap: 0;
+    position: relative;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute; left: 28px; top: 0; bottom: 0;
+    width: 1px; background: linear-gradient(to bottom, var(--gold), transparent);
+  }
+
+  .timeline-item {
+    display: flex; gap: 2rem;
+    padding: 1.5rem 0;
+    position: relative;
+  }
+
+  .timeline-dot {
+    width: 56px; height: 56px; flex-shrink: 0;
+    border-radius: 50%;
+    background: rgba(240,165,0,0.1);
+    border: 2px solid rgba(240,165,0,0.4);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem; font-weight: 700;
+    color: var(--gold);
+    position: relative; z-index: 1;
+  }
+
+  .timeline-content { padding-top: 12px; }
+  .timeline-step {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem; color: var(--gold);
+    letter-spacing: 0.15em; text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .timeline-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem; font-weight: 700;
+    color: var(--silver); margin-bottom: 0.5rem;
+  }
+  .timeline-desc {
+    font-size: 0.88rem; color: var(--mist); line-height: 1.7;
+  }
+
+  .track-badges {
+    display: flex; gap: 0.6rem; flex-wrap: wrap; margin-top: 0.8rem;
+  }
+
+  .track-badge {
+    padding: 4px 12px;
+    border-radius: 100px;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem; letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border: 1px solid;
+  }
+  .track-badge.cxo { background: rgba(56,189,248,0.1); color: var(--accent-blue); border-color: rgba(56,189,248,0.3); }
+  .track-badge.investor { background: rgba(52,211,153,0.1); color: var(--accent-green); border-color: rgba(52,211,153,0.3); }
+  .track-badge.pro { background: rgba(240,165,0,0.1); color: var(--gold); border-color: rgba(240,165,0,0.3); }
+
+  /* ======= PRICING ======= */
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 3.5rem;
+    align-items: start;
+  }
+
+  .price-card {
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 2.5rem 2rem;
+    background: var(--glass);
+    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+  .price-card:hover { transform: translateY(-6px); }
+
+  .price-card.featured {
+    border-color: rgba(240,165,0,0.5);
+    background: linear-gradient(135deg, rgba(240,165,0,0.06), rgba(240,165,0,0.02));
+    box-shadow: 0 0 60px rgba(240,165,0,0.1);
+  }
+
+  .price-featured-badge {
+    position: absolute; top: -1px; left: 50%; transform: translateX(-50%);
+    background: var(--gold); color: var(--ink);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem; font-weight: 500;
+    padding: 4px 16px;
+    border-radius: 0 0 8px 8px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .price-tier {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem; color: var(--mist);
+    letter-spacing: 0.15em; text-transform: uppercase;
+    margin-bottom: 0.8rem;
+  }
+
+  .price-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem; font-weight: 700;
+    color: var(--silver); margin-bottom: 0.5rem;
+  }
+
+  .price-amount {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem; font-weight: 900;
+    color: var(--gold); line-height: 1;
+    margin: 1.2rem 0 0.3rem;
+  }
+  .price-amount sup { font-size: 1.2rem; vertical-align: super; }
+  .price-amount .per { font-size: 0.9rem; color: var(--mist); font-family: 'Outfit', sans-serif; font-weight: 300; }
+
+  .price-free { font-size: 2rem; font-weight: 900; color: var(--accent-green); margin: 1.2rem 0 0.3rem; font-family: 'Playfair Display', serif; }
+
+  .price-divider {
+    height: 1px; background: var(--glass-border); margin: 1.5rem 0;
+  }
+
+  .price-feature {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 0.88rem; color: var(--silver);
+    padding: 0.45rem 0;
+  }
+
+  .check { color: var(--accent-green); flex-shrink: 0; }
+  .cross { color: rgba(255,255,255,0.2); flex-shrink: 0; }
+
+  /* ======= TECH TABLE ======= */
+  .tech-table {
+    width: 100%; border-collapse: collapse;
+    margin-top: 3rem;
+    font-size: 0.88rem;
+  }
+
+  .tech-table th {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem; color: var(--gold);
+    letter-spacing: 0.15em; text-transform: uppercase;
+    text-align: left; padding: 0.8rem 1.2rem;
+    border-bottom: 1px solid var(--glass-border);
+  }
+
+  .tech-table td {
+    padding: 0.9rem 1.2rem;
+    border-bottom: 1px solid rgba(255,255,255,0.03);
+    vertical-align: top;
+  }
+
+  .tech-table tr:hover td { background: rgba(255,255,255,0.02); }
+
+  .tech-table td:first-child { color: var(--mist); font-family: 'DM Mono', monospace; font-size: 0.8rem; }
+  .tech-table td:nth-child(2) { color: var(--silver); font-weight: 500; }
+  .tech-table td:nth-child(3) { color: var(--mist); }
+
+  /* ======= ROADMAP ======= */
+  .roadmap-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5px;
+    background: var(--glass-border);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    overflow: hidden;
+    margin-top: 3.5rem;
+  }
+
+  .roadmap-col { background: var(--ink); padding: 2rem; }
+
+  .roadmap-quarter {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem; letter-spacing: 0.15em;
+    text-transform: uppercase; margin-bottom: 0.5rem;
+  }
+
+  .roadmap-phase {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem; font-weight: 700;
+    color: var(--silver); margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--glass-border);
+  }
+
+  .roadmap-item {
+    font-size: 0.82rem; color: var(--mist);
+    padding: 0.4rem 0;
+    display: flex; align-items: flex-start; gap: 8px;
+  }
+  .roadmap-item::before { content: '→'; color: var(--gold); flex-shrink: 0; }
+
+  /* ======= TEAM ======= */
+  .team-section {
+    text-align: center;
+    background: radial-gradient(ellipse 60% 40% at 50% 100%, rgba(240,165,0,0.06) 0%, transparent 70%);
+  }
+
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem; margin-top: 3.5rem;
+  }
+
+  .team-card {
+    border: 1px solid var(--glass-border);
+    border-radius: 12px; padding: 2rem 1.5rem;
+    background: var(--glass);
+    text-align: center;
+    transition: border-color 0.3s, transform 0.3s;
+  }
+  .team-card:hover {
+    border-color: rgba(240,165,0,0.3);
+    transform: translateY(-4px);
+  }
+
+  .team-avatar {
+    width: 64px; height: 64px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(240,165,0,0.2), rgba(56,189,248,0.2));
+    border: 2px solid rgba(240,165,0,0.2);
+    margin: 0 auto 1rem;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.5rem;
+  }
+
+  .team-role {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem; color: var(--gold);
+    letter-spacing: 0.12em; text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+
+  .team-contrib {
+    font-size: 0.82rem; color: var(--mist); line-height: 1.6;
+  }
+
+  /* ======= CODE TERMINAL ======= */
+  .terminal {
+    border-radius: 12px; overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.08);
+    margin-top: 3rem;
+  }
+
+  .terminal-bar {
+    background: rgba(255,255,255,0.06);
+    padding: 0.8rem 1.2rem;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .t-dot { width: 12px; height: 12px; border-radius: 50%; }
+  .t-red { background: #FF5F57; }
+  .t-yellow { background: #FEBC2E; }
+  .t-green { background: #28C840; }
+
+  .terminal-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem; color: var(--mist);
+    margin-left: 0.5rem;
+  }
+
+  .terminal-body {
+    background: #0A0F1A;
+    padding: 2rem;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.85rem;
+    line-height: 2;
+  }
+
+  .t-comment { color: #4A5568; }
+  .t-cmd { color: var(--accent-green); }
+  .t-path { color: var(--accent-blue); }
+  .t-flag { color: var(--gold); }
+  .t-out { color: var(--mist); }
+  .t-success { color: var(--accent-green); }
+
+  /* ======= FOOTER ======= */
+  footer {
+    border-top: 1px solid var(--glass-border);
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+
+  .footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem; font-weight: 900;
+    color: var(--gold); margin-bottom: 1rem;
+  }
+
+  .footer-tagline {
+    color: var(--mist); font-size: 0.9rem;
+    margin-bottom: 2rem;
+  }
+
+  .footer-links {
+    display: flex; gap: 2rem; flex-wrap: wrap;
+    align-items: center; justify-content: center;
+    margin-bottom: 2.5rem;
+  }
+
+  .footer-link {
+    font-size: 0.85rem; color: var(--mist);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-link:hover { color: var(--gold); }
+
+  .footer-copy {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem; color: rgba(148,163,184,0.5);
+    letter-spacing: 0.05em;
+  }
+
+  .india-flag { color: #FF9933; }
+
+  /* ======= BADGES ======= */
+  .badge-row {
+    display: flex; gap: 0.8rem; flex-wrap: wrap;
+    margin-top: 2rem;
+  }
+
+  .badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 100px;
+    padding: 5px 14px;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem; color: var(--mist);
+    letter-spacing: 0.05em;
+  }
+
+  .badge .b-dot { width: 6px; height: 6px; border-radius: 50%; }
+
+  /* ======= ANIMATIONS ======= */
+  @keyframes fadeSlide {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .reveal {
+    opacity: 0; transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible {
+    opacity: 1; transform: translateY(0);
+  }
+
+  /* ======= RESPONSIVE ======= */
+  @media (max-width: 900px) {
+    .problem-inner { grid-template-columns: 1fr; }
+    .arch-grid { grid-template-columns: 1fr; }
+    .pricing-grid { grid-template-columns: 1fr; }
+    .roadmap-grid { grid-template-columns: 1fr 1fr; }
+    .team-grid { grid-template-columns: 1fr 1fr; }
+    .hero-stats { gap: 2rem; }
+    .stat-divider { display: none; }
+  }
+
+  @media (max-width: 600px) {
+    .roadmap-grid { grid-template-columns: 1fr; }
+    .team-grid { grid-template-columns: 1fr; }
+    .features-grid { grid-template-columns: 1fr; }
+  }
+
+  /* Shimmer number animation */
+  @keyframes countUp { from { opacity: 0; } to { opacity: 1; } }
+
+  /* Highlight stripe on hover */
+  .feature-card:nth-child(1) { --card-glow: rgba(240,165,0,0.05); }
+  .feature-card:nth-child(2) { --card-glow: rgba(56,189,248,0.05); }
+  .feature-card:nth-child(3) { --card-glow: rgba(52,211,153,0.05); }
+  .feature-card:nth-child(4) { --card-glow: rgba(251,113,133,0.05); }
+  .feature-card:nth-child(5) { --card-glow: rgba(240,165,0,0.05); }
+  .feature-card:nth-child(6) { --card-glow: rgba(56,189,248,0.05); }
+
+  /* Accent line nav */
+  .nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    padding: 1rem 2rem;
+    display: flex; align-items: center; justify-content: space-between;
+    background: rgba(5,10,20,0.8);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--glass-border);
+    transition: box-shadow 0.3s;
+  }
+
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem; font-weight: 900;
+    color: var(--gold);
+  }
+
+  .nav-logo span { color: var(--silver); }
+
+  .nav-links {
+    display: flex; gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-link {
+    font-size: 0.85rem; color: var(--mist);
+    text-decoration: none;
+    transition: color 0.2s;
+    font-weight: 400;
+  }
+  .nav-link:hover { color: var(--silver); }
+
+  .nav-cta {
+    padding: 8px 20px;
+    background: rgba(240,165,0,0.15);
+    border: 1px solid rgba(240,165,0,0.4);
+    border-radius: 6px;
+    font-size: 0.85rem; color: var(--gold);
+    text-decoration: none;
+    transition: all 0.25s;
+    font-weight: 500;
+  }
+  .nav-cta:hover { background: rgba(240,165,0,0.25); }
+
+  /* Glow strip */
+  .glow-strip {
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold), var(--accent-blue), var(--accent-green), transparent);
+    margin-top: 5rem;
+    opacity: 0.4;
+  }
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-logo">ET <span>AI Concierge</span></div>
+  <ul class="nav-links">
+    <li><a href="#features" class="nav-link">Features</a></li>
+    <li><a href="#architecture" class="nav-link">Architecture</a></li>
+    <li><a href="#pricing" class="nav-link">Pricing</a></li>
+    <li><a href="#roadmap" class="nav-link">Roadmap</a></li>
+  </ul>
+  <a href="#setup" class="nav-cta">Get Started →</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+
+  <div class="hero-badge">🏆 Built at Hackathon · Team AGI</div>
+
+  <p class="hero-eyebrow">Economic Times · Personal Finance Platform</p>
+
+  <h1 class="hero-title">
+    <span class="et">ET</span> <span class="ai">AI</span><br>Concierge
+  </h1>
+
+  <p class="hero-subtitle">
+    An intelligent orchestration platform that maps your financial DNA to India's most powerful investment ecosystem — in under 3 minutes.
+  </p>
+
+  <div class="hero-cta-row">
+    <button class="btn-primary">Launch Demo →</button>
+    <button class="btn-ghost">View on GitHub</button>
+  </div>
+
+  <div class="badge-row" style="justify-content:center; margin-top: 2rem;">
+    <span class="badge"><span class="b-dot" style="background:#61DAFB"></span>React 18</span>
+    <span class="badge"><span class="b-dot" style="background:#646CFF"></span>Vite 5</span>
+    <span class="badge"><span class="b-dot" style="background:#34D399"></span>FastAPI</span>
+    <span class="badge"><span class="b-dot" style="background:#F0A500"></span>LangGraph</span>
+    <span class="badge"><span class="b-dot" style="background:#FB7185"></span>ChromaDB</span>
+  </div>
+
+  <div class="hero-stats">
+    <div class="stat">
+      <div class="stat-num">13+</div>
+      <div class="stat-label">Components</div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat">
+      <div class="stat-num">15K</div>
+      <div class="stat-label">Lines of Code</div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat">
+      <div class="stat-num">150M</div>
+      <div class="stat-label">Target Users</div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat">
+      <div class="stat-num">₹5K Cr</div>
+      <div class="stat-label">Market TAM</div>
+    </div>
+  </div>
+
+  <div class="scroll-hint">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<div class="glow-strip"></div>
+
+<!-- PROBLEM STRIP -->
+<div class="problem-strip">
+  <div class="problem-inner">
+    <div>
+      <div class="section-label">The Problem</div>
+      <div class="problem-stat-big">80%</div>
+      <p style="font-size: 1.15rem; color: var(--silver); line-height: 1.7; margin-top: 1rem; max-width: 420px;">
+        of Indian investors lack access to personalized financial advisory — leaving crores on the table.
+      </p>
+    </div>
+    <div class="problem-items">
+      <div class="problem-item">
+        <span class="icon">⚡</span>
+        <div>Complex tax regulations (80C, HRA, Capital Gains) are near-impossible to navigate without expert help.</div>
+      </div>
+      <div class="problem-item">
+        <span class="icon">📊</span>
+        <div>IPO decisions require real-time data that fragmented platforms fail to surface in time.</div>
+      </div>
+      <div class="problem-item">
+        <span class="icon">🗺️</span>
+        <div>Most ET users discover only <strong style="color:var(--accent-rose)">10%</strong> of what the ecosystem offers — the rest stays hidden.</div>
+      </div>
+      <div class="problem-item">
+        <span class="icon">💎</span>
+        <div>Premium advisory tools remain locked behind expertise barriers, excluding retail investors entirely.</div>
+      </div>
+    </div>
+  </div>
 </div>
+
+<!-- FEATURES -->
+<section id="features">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">Core Capabilities</div>
+      <h2 class="section-title">Everything you need.<br>In one intelligent platform.</h2>
+      <p class="section-body">Eight fully functional modules, orchestrated by AI, designed specifically for the Indian investor's journey.</p>
+    </div>
+
+    <div class="features-grid reveal">
+      <div class="feature-card">
+        <span class="feature-icon">🗣️</span>
+        <div class="feature-title">ET Welcome Concierge</div>
+        <div class="feature-body">A state-machine driven profiling agent that maps your intent, role, and life stage in a natural 3-minute conversation — no forms, no friction.</div>
+        <span class="feature-tag">LangGraph Agent</span>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">🧭</span>
+        <div class="feature-title">Financial Life Navigator</div>
+        <div class="feature-body">ChromaDB vector search matches your unique profile against the entire ET ecosystem, surfacing the exact tools that fit your situation with personalized payoff narratives.</div>
+        <span class="feature-tag" style="--tag-bg: rgba(56,189,248,0.1); --tag-color: var(--accent-blue); --tag-border: rgba(56,189,248,0.2)">ChromaDB · RAG</span>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">📈</span>
+        <div class="feature-title">IPO Command Center</div>
+        <div class="feature-body">Live IPO calendar, GMP tracking, category-wise subscription data (Retail/NII/QIB), ASBA simulation, and SEBI-compliant AI recommendations — all in one dashboard.</div>
+        <span class="feature-tag" style="--tag-bg: rgba(52,211,153,0.1); --tag-color: var(--accent-green); --tag-border: rgba(52,211,153,0.2)">Real-time Analytics</span>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">💰</span>
+        <div class="feature-title">Indian Tax Planner</div>
+        <div class="feature-body">Complete 80C/80D/HRA/LTCG/STCG calculators with metro vs non-metro HRA logic, ELSS tracker, and section-wise limit visualization built for Indian tax law.</div>
+        <span class="feature-tag" style="--tag-bg: rgba(251,113,133,0.1); --tag-color: var(--accent-rose); --tag-border: rgba(251,113,133,0.2)">SEBI Compliant</span>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">🎯</span>
+        <div class="feature-title">Goal Tracker</div>
+        <div class="feature-body">Multi-goal planning (Retirement, Education, Home, Emergency) with visual SIP calculators, inflation-adjusted projections, and milestone celebration triggers.</div>
+        <span class="feature-tag">AI Projections</span>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">👨‍👩‍👧‍👦</span>
+        <div class="feature-title">Family Wealth Center</div>
+        <div class="feature-body">Consolidated family portfolio view with role-based access, collaborative goal planning, estate planning calculators, and family-wide insurance gap analysis.</div>
+        <span class="feature-tag" style="--tag-bg: rgba(56,189,248,0.1); --tag-color: var(--accent-blue); --tag-border: rgba(56,189,248,0.2)">Elite Tier</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROFILER TIMELINE -->
+<section class="profiler-section" id="profiler">
+  <div class="container">
+    <div class="reveal" style="display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start;">
+      <div>
+        <div class="section-label">The 3-Minute Profiler</div>
+        <h2 class="section-title">From stranger to financial advisor — instantly.</h2>
+        <p class="section-body">Our state-machine driven concierge conducts a natural conversation, extracts your intent, and routes you to exactly the right ET product — no search required.</p>
+
+        <div class="timeline" style="margin-top: 2.5rem;">
+          <div class="timeline-item">
+            <div class="timeline-dot">0</div>
+            <div class="timeline-content">
+              <div class="timeline-step">Turn 0 · Greeting</div>
+              <div class="timeline-heading">Profession Probe</div>
+              <div class="timeline-desc">AI asks what keeps you busy. LLM extracts Role, Industry, and Seniority from natural language.</div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot">1</div>
+            <div class="timeline-content">
+              <div class="timeline-step">Turn 1 · Branching</div>
+              <div class="timeline-heading">Track Selection</div>
+              <div class="timeline-desc">Dynamic routing based on profile classification.</div>
+              <div class="track-badges">
+                <span class="track-badge cxo">CXO Track</span>
+                <span class="track-badge investor">Investor Track</span>
+                <span class="track-badge pro">Professional</span>
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot">2</div>
+            <div class="timeline-content">
+              <div class="timeline-step">Turn 2 · Life Event</div>
+              <div class="timeline-heading">Intent Pivot</div>
+              <div class="timeline-desc">Detects life events (new job, marriage, inheritance, home purchase) and switches from Content-First to Marketplace-First recommendations.</div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot">✓</div>
+            <div class="timeline-content">
+              <div class="timeline-step">Resolution</div>
+              <div class="timeline-heading">ChromaDB Match</div>
+              <div class="timeline-desc">Vector similarity search against ET Product Knowledge Graph delivers a personalized, narrative-driven product recommendation.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="padding-top: 2rem;">
+        <div class="terminal">
+          <div class="terminal-bar">
+            <div class="t-dot t-red"></div>
+            <div class="t-dot t-yellow"></div>
+            <div class="t-dot t-green"></div>
+            <span class="terminal-title">concierge_session.log</span>
+          </div>
+          <div class="terminal-body">
+<span class="t-comment"># Turn 0 — Greeting</span>
+<span class="t-out">🤖 "What kind of work keeps you busy these days?"</span>
+<span class="t-cmd">👤 "I'm a fund manager at Motilal Oswal"</span>
+
+<span class="t-comment"># LLM extracts signal</span>
+<span class="t-path">→ role: FUND_MANAGER</span>
+<span class="t-path">→ track: INVESTOR</span>
+<span class="t-path">→ seniority: SENIOR</span>
+
+<span class="t-comment"># Turn 1 — Investor track activated</span>
+<span class="t-out">🤖 "Are you looking at any upcoming IPOs or sector rotations?"</span>
+<span class="t-cmd">👤 "Just got married, looking to buy a house too"</span>
+
+<span class="t-comment"># Life event detected!</span>
+<span class="t-flag">⚡ LIFE_EVENT: MARRIAGE + HOME_PURCHASE</span>
+<span class="t-flag">→ switching: CONTENT_FIRST → MARKETPLACE_FIRST</span>
+
+<span class="t-comment"># ChromaDB vector search</span>
+<span class="t-path">→ querying ET Product Knowledge Graph...</span>
+<span class="t-path">→ top_match: ET_HDFC_HOME_LOAN (0.94)</span>
+<span class="t-path">→ top_match: ET_GOAL_TRACKER (0.89)</span>
+
+<span class="t-success">✅ Routing to Marketplace Agent + Goal Setup</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARCHITECTURE -->
+<section class="arch-section" id="architecture">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">Technical Architecture</div>
+      <h2 class="section-title">Built to scale.<br>Designed to impress.</h2>
+    </div>
+
+    <div class="arch-grid reveal">
+      <div class="arch-box">
+        <div class="arch-box-title">Frontend Stack</div>
+        <div class="layer-item"><div class="layer-dot" style="background:#61DAFB"></div><span class="layer-name">React 18</span><span class="layer-desc">Functional components, Context API</span></div>
+        <div class="layer-item"><div class="layer-dot" style="background:#646CFF"></div><span class="layer-name">Vite 5</span><span class="layer-desc">HMR, optimized production builds</span></div>
+        <div class="layer-item"><div class="layer-dot" style="background:#F0A500"></div><span class="layer-name">React Router</span><span class="layer-desc">15 protected + 2 public routes</span></div>
+        <div class="layer-item"><div class="layer-dot" style="background:#94A3B8"></div><span class="layer-name">Lucide React</span><span class="layer-desc">500+ consistent-stroke icons</span></div>
+        <div class="layer-item"><div class="layer-dot" style="background:#38BDF8"></div><span class="layer-name">Web Speech API</span><span class="layer-desc">Voice input & synthesis</span></div>
+        <div class="layer-item"><div class="layer-dot" style="background:#34D399"></div><span class="layer-name">CSS3 Variables</span><span class="layer-desc">Glassmorphism design system</span></div>
+      </div>
+
+      <div class="arch-box">
+        <div class="arch-box-title">AI & Backend</div>
+        <div class="layer-item"><div class="layer-dot" style="background:#F0A500"></div><span class="layer-name">LangGraph</span><span class="layer-desc">Multi-agent state machine orchestration</span></div>
+        <div class="layer-item"><div class="layer-dot" style="background:#FB7185"></div><span class="layer-name">Groq API</span><span class="layer-desc">Llama 3.3 70b · Llama 3.1 8b inference</span></div>
+        <div class="layer-item"><div class="layer-dot" style="background:#38BDF8"></div><span class="layer-name">FastAPI</span><span class="layer-desc">Python 3.11, ASGI, WebSocket</span></div>
+        <div class="layer-item"><div class="layer-dot" style="background:#34D399"></div><span class="layer-name">ChromaDB</span><span class="layer-desc">ET Product Knowledge Graph embeddings</span></div>
+        <div class="layer-item"><div class="layer-dot" style="background:#94A3B8"></div><span class="layer-name">PostgreSQL</span><span class="layer-desc">asyncpg, user profiles, session memory</span></div>
+        <div class="layer-item"><div class="layer-dot" style="background:#646CFF"></div><span class="layer-name">FileReader API</span><span class="layer-desc">Document PDF/image analysis</span></div>
+      </div>
+    </div>
+
+    <!-- Flow diagram -->
+    <div class="flow-diagram reveal">
+      <div class="flow-title">Data Flow · Profiler Agent Orchestration</div>
+      <div class="flow-row" style="gap: 0.5rem; flex-wrap: wrap; justify-content: center; align-items: center;">
+        <div>
+          <div class="flow-node user">User Input<br><span style="font-size:0.72rem; opacity:0.7">Text / Voice</span></div>
+          <div class="flow-label">entry</div>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div>
+          <div class="flow-node ai">LangGraph<br><span style="font-size:0.72rem; opacity:0.7">State Machine</span></div>
+          <div class="flow-label">orchestration</div>
+        </div>
+        <div class="flow-arrow">⇆</div>
+        <div>
+          <div class="flow-node engine">Groq LLM<br><span style="font-size:0.72rem; opacity:0.7">Llama 3.3 70b</span></div>
+          <div class="flow-label">inference</div>
+        </div>
+        <div class="flow-arrow">⇆</div>
+        <div>
+          <div class="flow-node engine" style="--card-glow: rgba(56,189,248,0.1); background: rgba(56,189,248,0.1); border-color: rgba(56,189,248,0.3); color: var(--accent-blue);">ChromaDB<br><span style="font-size:0.72rem; opacity:0.7">Vector Search</span></div>
+          <div class="flow-label">knowledge graph</div>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div>
+          <div class="flow-node output">Personalized<br><span style="font-size:0.72rem; opacity:0.7">Recommendation</span></div>
+          <div class="flow-label">resolution</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="container">
+    <div class="reveal" style="text-align: center;">
+      <div class="section-label" style="justify-content: center;">
+        <span>Subscription Model</span>
+      </div>
+      <h2 class="section-title">Choose your financial edge.</h2>
+      <p class="section-body" style="margin: 0 auto;">From free access to India's smartest finance tools, to elite private summits and family wealth management.</p>
+    </div>
+
+    <div class="pricing-grid reveal">
+      <!-- Basic -->
+      <div class="price-card">
+        <div class="price-tier">Tier 01</div>
+        <div class="price-name">ET Basic</div>
+        <div class="price-free">Free</div>
+        <div style="font-size:0.82rem; color: var(--mist); margin-top: 0.2rem;">Forever free. No credit card.</div>
+        <div class="price-divider"></div>
+        <div class="price-feature"><span class="check">✓</span> 5 AI queries per day</div>
+        <div class="price-feature"><span class="check">✓</span> Basic portfolio tracking</div>
+        <div class="price-feature"><span class="check">✓</span> IPO calendar access</div>
+        <div class="price-feature"><span class="check">✓</span> Standard market updates</div>
+        <div class="price-feature"><span class="cross">✗</span> Portfolio projections</div>
+        <div class="price-feature"><span class="cross">✗</span> Real-time alerts</div>
+        <div class="price-feature"><span class="cross">✗</span> ET Prime access</div>
+        <div style="margin-top: 2rem;">
+          <button class="btn-ghost" style="width:100%; cursor:none; border-radius:8px;">Get Started Free</button>
+        </div>
+      </div>
+
+      <!-- Pro -->
+      <div class="price-card featured">
+        <div class="price-featured-badge">Most Popular</div>
+        <div class="price-tier">Tier 02</div>
+        <div class="price-name">ET Pro</div>
+        <div class="price-amount"><sup>₹</sup>4,999<span class="per"> /year</span></div>
+        <div style="font-size:0.82rem; color: var(--mist); margin-top: 0.2rem;">₹416/month, billed annually</div>
+        <div class="price-divider"></div>
+        <div class="price-feature"><span class="check">✓</span> 50 AI queries per day</div>
+        <div class="price-feature"><span class="check">✓</span> Portfolio projections</div>
+        <div class="price-feature"><span class="check">✓</span> Real-time market alerts</div>
+        <div class="price-feature"><span class="check">✓</span> ET Prime full access</div>
+        <div class="price-feature"><span class="check">✓</span> Advanced tax planning</div>
+        <div class="price-feature"><span class="check">✓</span> Gap analysis engine</div>
+        <div class="price-feature"><span class="cross">✗</span> Family portfolio</div>
+        <div style="margin-top: 2rem;">
+          <button class="btn-primary" style="width:100%; cursor:none; border-radius:8px;">Start Pro Trial</button>
+        </div>
+      </div>
+
+      <!-- Elite -->
+      <div class="price-card">
+        <div class="price-tier">Tier 03</div>
+        <div class="price-name">ET Elite</div>
+        <div class="price-amount"><sup>₹</sup>14,999<span class="per"> /year</span></div>
+        <div style="font-size:0.82rem; color: var(--mist); margin-top: 0.2rem;">₹1,250/month, billed annually</div>
+        <div class="price-divider"></div>
+        <div class="price-feature"><span class="check">✓</span> Unlimited AI queries</div>
+        <div class="price-feature"><span class="check">✓</span> Family portfolio management</div>
+        <div class="price-feature"><span class="check">✓</span> Private summits access</div>
+        <div class="price-feature"><span class="check">✓</span> Masterclass sessions</div>
+        <div class="price-feature"><span class="check">✓</span> Dedicated hybrid support</div>
+        <div class="price-feature"><span class="check">✓</span> Exclusive research reports</div>
+        <div class="price-feature"><span class="check">✓</span> Estate planning tools</div>
+        <div style="margin-top: 2rem;">
+          <button class="btn-ghost" style="width:100%; cursor:none; border-radius:8px; border-color: rgba(240,165,0,0.3); color: var(--gold);">Go Elite</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ROADMAP -->
+<section id="roadmap" style="padding-bottom: 4rem;">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">Implementation Roadmap</div>
+      <h2 class="section-title">The path from hackathon to platform.</h2>
+    </div>
+
+    <div class="roadmap-grid reveal">
+      <div class="roadmap-col" style="border-left: 3px solid var(--accent-green);">
+        <div class="roadmap-quarter" style="color: var(--accent-green);">Phase 1 · Complete</div>
+        <div class="roadmap-phase">Foundation ✅</div>
+        <div class="roadmap-item">React 18 architecture</div>
+        <div class="roadmap-item">Glassmorphism design system</div>
+        <div class="roadmap-item">13 major components</div>
+        <div class="roadmap-item">AI Concierge chat UI</div>
+        <div class="roadmap-item">IPO Command Center</div>
+        <div class="roadmap-item">Goal Tracker + Tax Planner</div>
+        <div class="roadmap-item">Protected routes & auth</div>
+      </div>
+      <div class="roadmap-col" style="border-left: 3px solid var(--accent-blue);">
+        <div class="roadmap-quarter" style="color: var(--accent-blue);">Phase 2 · Q2 2025</div>
+        <div class="roadmap-phase">AI Enhancement 🚀</div>
+        <div class="roadmap-item">Real-time NSE/BSE data APIs</div>
+        <div class="roadmap-item">Predictive portfolio analytics</div>
+        <div class="roadmap-item">AI-powered stock screener</div>
+        <div class="roadmap-item">Voice assistant (Hindi, Tamil)</div>
+        <div class="roadmap-item">React Native mobile app</div>
+        <div class="roadmap-item">Zerodha, Upstox integration</div>
+      </div>
+      <div class="roadmap-col" style="border-left: 3px solid var(--gold);">
+        <div class="roadmap-quarter" style="color: var(--gold);">Phase 3 · Q3 2025</div>
+        <div class="roadmap-phase">Scale & Intelligence 📊</div>
+        <div class="roadmap-item">ML recommendation engine</div>
+        <div class="roadmap-item">Risk analysis model</div>
+        <div class="roadmap-item">Fraud detection layer</div>
+        <div class="roadmap-item">Tax filing assistant</div>
+        <div class="roadmap-item">Crypto portfolio tracking</div>
+        <div class="roadmap-item">International markets</div>
+      </div>
+      <div class="roadmap-col" style="border-left: 3px solid var(--accent-rose);">
+        <div class="roadmap-quarter" style="color: var(--accent-rose);">Phase 4 · Q4 2025</div>
+        <div class="roadmap-phase">Enterprise 🏢</div>
+        <div class="roadmap-item">Family Office Suite</div>
+        <div class="roadmap-item">AI estate planning</div>
+        <div class="roadmap-item">Smart ML notifications</div>
+        <div class="roadmap-item">Community Q&A forums</div>
+        <div class="roadmap-item">Enterprise API for partners</div>
+        <div class="roadmap-item">White-label solutions</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SETUP -->
+<section id="setup" style="padding: 4rem 2rem;">
+  <div class="container">
+    <div class="reveal" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+      <div>
+        <div class="section-label">Quick Setup</div>
+        <h2 class="section-title">Running in<br>60 seconds.</h2>
+        <p class="section-body">Node.js 18+ and npm 9+ is all you need. Clone, install, and your local dev server starts on <span style="font-family:'DM Mono',monospace; color: var(--accent-blue); background: rgba(56,189,248,0.1); padding: 2px 8px; border-radius: 4px;">localhost:5173</span>.</p>
+      </div>
+      <div class="terminal">
+        <div class="terminal-bar">
+          <div class="t-dot t-red"></div>
+          <div class="t-dot t-yellow"></div>
+          <div class="t-dot t-green"></div>
+          <span class="terminal-title">bash</span>
+        </div>
+        <div class="terminal-body">
+<span class="t-comment"># Clone the repository</span>
+<span class="t-cmd">git clone</span> <span class="t-path">https://github.com/team-agi/et-ai-concierge</span>
+
+<span class="t-cmd">cd</span> et-ai-concierge
+
+<span class="t-comment"># Install dependencies</span>
+<span class="t-cmd">npm install</span>
+
+<span class="t-comment"># Start development server</span>
+<span class="t-cmd">npm run dev</span>
+
+<span class="t-comment"># Production build</span>
+<span class="t-cmd">npm run build</span>
+
+<span class="t-success">✓  http://localhost:5173 ready in 312ms</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="team-section">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label" style="justify-content: center;">The Builders</div>
+      <h2 class="section-title">Team AGI</h2>
+      <p class="section-body" style="margin: 0 auto;">Built with passion at an intensive hackathon. Four disciplines, one mission: democratize financial intelligence for India.</p>
+    </div>
+
+    <div class="team-grid reveal">
+      <div class="team-card">
+        <div class="team-avatar">⚛️</div>
+        <div class="team-role">Frontend Engineers</div>
+        <div class="team-contrib">React architecture, state management, UI implementation across 13 production components.</div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">🎨</div>
+        <div class="team-role">UI/UX Designers</div>
+        <div class="team-contrib">Glassmorphism design system, responsive layouts, user experience flows and micro-interactions.</div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">🤖</div>
+        <div class="team-role">AI Specialists</div>
+        <div class="team-contrib">LangGraph orchestration, Groq inference, ChromaDB vector search, and recommendation engine.</div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">📊</div>
+        <div class="team-role">Finance Experts</div>
+        <div class="team-contrib">Indian tax logic, investment algorithms, SEBI compliance, and market data integration.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">ET AI Concierge</div>
+  <div class="footer-tagline">Revolutionizing Personal Finance for India 🇮🇳</div>
+
+  <div class="footer-links">
+    <a href="#" class="footer-link">Features</a>
+    <a href="#" class="footer-link">Architecture</a>
+    <a href="#" class="footer-link">Pricing</a>
+    <a href="#" class="footer-link">Roadmap</a>
+    <a href="#" class="footer-link">GitHub</a>
+    <a href="#" class="footer-link">Support</a>
+  </div>
+
+  <div class="footer-copy">
+    © 2024 The Economic Times — Times Internet Limited · Built by Team AGI · Made in India
+  </div>
+</footer>
+
+<script>
+  // Custom cursor
+  const cursor = document.getElementById('cursor');
+  const ring = document.getElementById('cursorRing');
+  let mx = 0, my = 0, rx = 0, ry = 0;
+
+  document.addEventListener('mousemove', e => {
+    mx = e.clientX; my = e.clientY;
+    cursor.style.left = mx + 'px';
+    cursor.style.top = my + 'px';
+  });
+
+  function animateRing() {
+    rx += (mx - rx) * 0.12;
+    ry += (my - ry) * 0.12;
+    ring.style.left = rx + 'px';
+    ring.style.top = ry + 'px';
+    requestAnimationFrame(animateRing);
+  }
+  animateRing();
+
+  // Reveal on scroll
+  const revealEls = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        // stagger children if grid
+        const children = e.target.querySelectorAll('.feature-card, .price-card, .team-card, .roadmap-col, .arch-box');
+        children.forEach((c, i) => {
+          c.style.transitionDelay = (i * 0.08) + 's';
+          c.style.opacity = '0';
+          c.style.transform = 'translateY(20px)';
+          setTimeout(() => {
+            c.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            c.style.opacity = '1';
+            c.style.transform = 'translateY(0)';
+          }, i * 80);
+        });
+      }
+    });
+  }, { threshold: 0.1 });
+
+  revealEls.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
