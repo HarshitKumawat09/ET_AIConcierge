@@ -1,45 +1,120 @@
-# ET AI Concierge - Personal Finance Platform
-## Team AGI | AI-Powered Financial Advisory Solution
+<div align="center">
 
-[![Built by Team AGI](https://img.shields.io/badge/Built%20by-Team%20AGI-blue)](https://)
-[![React](https://img.shields.io/badge/React-18-61DAFB?logo=react)](https://react.dev)
-[![Vite](https://img.shields.io/badge/Vite-5-646CFF?logo=vite)](https://vitejs.dev)
+<img src="https://readme-typing-svg.demolab.com?font=Playfair+Display&size=52&pause=1200&color=F0A500&center=true&vCenter=true&width=700&lines=ET+AI+Concierge;India%27s+Financial+Copilot;Built+by+Team+AGI" alt="ET AI Concierge" />
+
+<br/>
+
+<h3>🇮🇳 An Intelligent Orchestration Platform for the Indian Investor</h3>
+<p>Democratizing Wealth Management · Powered by AI · Built on the Economic Times Ecosystem</p>
+
+## Team AGI | AI-Powered Financial Advisory Solution
+[![Live Demo](https://img.shields.io/badge/🚀_Live_Demo-ET_AI_Concierge-00C853?style=for-the-badge&logo=vercel&logoColor=white)](https://et-ai-concierge.vercel.app/)
+<br/>
+
+[![React](https://img.shields.io/badge/React_18-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev)
+[![Vite](https://img.shields.io/badge/Vite_5-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev)
+[![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
+[![Python](https://img.shields.io/badge/Python_3.11-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
+[![LangGraph](https://img.shields.io/badge/LangGraph-FF6B35?style=for-the-badge&logo=langchain&logoColor=white)](https://langchain.com)
+[![ChromaDB](https://img.shields.io/badge/ChromaDB-FF4081?style=for-the-badge)](https://trychroma.com)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791?style=for-the-badge&logo=postgresql&logoColor=white)](https://postgresql.org)
+[![Groq](https://img.shields.io/badge/Groq_API-F55036?style=for-the-badge)](https://groq.com)
+
+<br/>
+
+<table>
+  <tr>
+    <td align="center"><b>🧩 13+</b><br/><sub>Major Components</sub></td>
+    <td align="center"><b>📝 15,000+</b><br/><sub>Lines of Code</sub></td>
+    <td align="center"><b>🛣️ 17</b><br/><sub>Application Routes</sub></td>
+    <td align="center"><b>⚙️ 8</b><br/><sub>Core Modules</sub></td>
+  </tr>
+</table>
+
+<br/>
+
+> **"Most users discover only 10% of what ET offers. We built the other 90%."**
+
+</div>
 
 ---
 
 ## 📋 Project Overview
 
-**ET AI Concierge** is an innovative AI-powered personal finance platform designed specifically for Indian investors. Built during an intensive hackathon by **Team AGI**, this application combines cutting-edge web technologies with comprehensive financial tools to democratize wealth management.
+**ET AI Concierge** is an innovative AI-powered personal finance platform designed **specifically for Indian investors**. Built during an intensive hackathon by **Team AGI**, this application combines cutting-edge web technologies with comprehensive financial tools to democratize wealth management across India's 150M+ retail investor base.
 
-**Live Demo**: `npm run dev` → http://localhost:5173  
-**Tech Stack**: React 18, Vite, React Router, Context API, Web Speech API
+The platform acts as a **unified intelligent entry point** to the entire Economic Times ecosystem — routing users from fragmented, confusing financial tools to exactly what they need, when they need it, based on a 3-minute natural language profiling conversation.
+
+```
+Live Demo   →  npm run dev  →  http://localhost:5173
+Tech Stack  →  React 18 · Vite · React Router · Context API · Web Speech API
+Backend     →  FastAPI · LangGraph · Groq · ChromaDB · PostgreSQL
+```
 
 ---
 
-## 🎯 Problem Statement & Solution
+## ⚠️ The Problem Statement
 
-### The Challenge: The "10% Discovery" Problem
-The Economic Times possesses a massive ecosystem—ET Prime, ET Markets, Masterclasses, corporate events, and financial partnerships. However, **most users only discover 10% of what ET offers**. Navigation is fragmented, and users miss tools that perfectly match their life stage and financial goals.
+### The "10% Discovery" Problem
 
-**80% of Indian investors** lack access to personalized financial advisory:
-- Complex tax regulations (80C, HRA, Capital Gains) are difficult to navigate
-- IPO investment decisions require real-time data analysis
-- Goal-based planning is fragmented across multiple apps
-- Premium content remains inaccessible to retail investors
+The Economic Times possesses a massive, powerful ecosystem — **ET Prime**, **ET Markets**, **Masterclasses**, corporate events, and financial marketplace partnerships. However, **most users discover only 10% of what ET offers**. Navigation is fragmented, and users consistently miss tools that perfectly match their life stage and financial goals.
 
-### Our Solution: The 3-Minute Profiler
-**ET AI Concierge** is an intelligent orchestration platform acting as a unified entry point. Instead of forcing users to search, our AI conducts a natural, **3-minute profiling conversation**, maps intent against an **ET Product Knowledge Graph**, and proactively routes users to the right content, tools, or marketplace partners.
+<br>
 
-**Core Capabilities**:
-- 🤖 **AI-Powered Financial Assistant** with natural language queries
-- 🗣️ **ET Welcome Concierge** - State-machine driven profiling agent
-- 🧭 **Financial Life Navigator** - Product mapping via ChromaDB vector search
-- 📊 **Real-time IPO Tracking** with GMP and subscription analytics
-- 🔄 **Cross-Sell Engine** - Behavioral signal processing for upsells
-- 🎯 **Goal-Based Planning** with visual progress tracking
-- 🏪 **Services Marketplace** - Partner integration (loans, insurance)
-- 📰 **ET Prime Integration** for premium market insights
-- 👨‍👩‍👧‍👦 **Family Wealth Management** for multi-generational planning
+<div align="center">
+
+> ## 🚨 The Indian Investor Crisis
+> **80% of Indian investors lack personalized financial advice.**
+> 
+> ---
+> 
+> 🧩 **Complex tax regulations** (80C, HRA, Capital Gains) are nearly impossible to navigate without experts.
+> 
+> 📈 **IPO investment decisions** require real-time data analysis that fragmented platforms fail to provide.
+> 
+> 🎯 **Goal-based planning** is scattered across 5+ apps with no unified financial view.
+> 
+> 🔒 **Premium advisory content** remains locked behind expertise barriers, excluding retail investors.
+
+</div>
+
+<br>
+
+| Challenge | Scale of Problem |
+|---|---|
+| 🔴 Tax complexity (80C, HRA, LTCG, STCG) | 130M+ taxpayers navigate this alone |
+| 🔴 IPO opportunity gap | ₹2L Cr+ in IPOs yearly, most retail investors under-informed |
+| 🔴 Fragmented goal planning | Average Indian uses 4-5 separate apps for financial planning |
+| 🔴 Discovery failure in ET ecosystem | 90% of ET's value remains undiscovered by its own users |
+| 🔴 Advisory access inequality | HNIs get advisors; retail investors get generic content |
+
+---
+
+## 💡 Our Solution
+
+### ET AI Concierge — The Intelligent Orchestration Platform
+
+Instead of forcing users to search through a maze of menus, our AI conducts a **natural, conversational 3-minute profiling session**, maps the extracted intent against an **ET Product Knowledge Graph** (powered by ChromaDB vector search), and proactively routes users to the right content, tools, or marketplace partners.
+
+**Core Capabilities at a Glance:**
+<div align="center">
+  <table style="border: 1px solid #e1e4e8; border-radius: 6px; padding: 15px; width: 100%; max-width: 600px;">
+    <tr>
+      <td style="line-height: 1.8; font-size: 15px;">
+        <b>🤖 AI-Powered Assistant</b> &nbsp;─&nbsp; Natural language queries<br>
+        <b>🗣️ ET Welcome Concierge</b> &nbsp;─&nbsp; State-machine profiling agent<br>
+        <b>🧭 Financial Life Navigator</b> &nbsp;─&nbsp; ChromaDB vector product map<br>
+        <b>📊 Real-time IPO Tracking</b> &nbsp;─&nbsp; GMP + subscription analytics<br>
+        <b>🔄 Cross-Sell Engine</b> &nbsp;─&nbsp; Behavioural signal processing<br>
+        <b>🎯 Goal-Based Planning</b> &nbsp;─&nbsp; Visual SIP + milestone system<br>
+        <b>🏪 Services Marketplace</b> &nbsp;─&nbsp; HDFC, Bajaj, SBI integration<br>
+        <b>📰 ET Prime Integration</b> &nbsp;─&nbsp; Premium market insights<br>
+        <b>👨‍👩‍👧‍👦 Family Wealth Management</b> &nbsp;─&nbsp; Multi-generational planning
+      </td>
+    </tr>
+  </table>
+</div>
+
 
 ---
 
@@ -136,701 +211,879 @@ flowchart TB
 
 ---
 
-## ✨ Core Features Implemented
+## ✨ Core Features
 
-### 1. 🗣️ ET Welcome Concierge (The 3-Minute Profiler)
+### 🗣️ 1. ET Welcome Concierge — The 3-Minute Profiler
+> *State-machine driven conversational profiling — no forms, no friction*
+
+### 🧭 2. Financial Life Navigator — Product Mapper
+> *ChromaDB vector search connects your profile to the full ET ecosystem*
+
+### 🤖 3. AI Concierge Chat — Conversational Finance
+> *Ask anything financial in plain English (or Hindi) — via text or voice*
+
+### 📈 4. IPO Command Center
+> *Live GMP, category-wise subscriptions, SEBI-compliant AI recommendations*
+
+### 🔄 5. ET Ecosystem Cross-Sell Engine
+> *Background behavioral analytics for non-intrusive, timely upsells*
+
+### 🏪 6. Services Marketplace Agent
+> *Life-event triggered partner connections — loans, credit, insurance*
+
+### 💰 7. Indian Tax Planner
+> *Full 80C / 80D / HRA / LTCG / STCG calculators for Indian tax law*
+
+### 🎯 8. Goal Tracker
+> *Multi-goal visual planning with inflation-adjusted SIP projections*
+
+### 📰 9. ET Prime Content Hub
+> *Tiered content — free market updates to exclusive expert deep-dives*
+
+### 👨‍👩‍👧‍👦 10. Family Wealth Center *(Elite Tier)*
+> *Consolidated family portfolio with estate planning and gap analysis*
+
+---
+
+## 🗣️ The 3-Minute Profiler — Deep Dive
+
+The flagship feature. A LangGraph-powered state machine that replaces traditional onboarding forms with a fluid, intelligent conversation.
 
 ```
-┌─────────────────────────────────────────────────────────────────┐
-│  The 3-Minute Decision Flow                                      │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│  Turn 0: Greeting                                                │
-│  AI: "What kind of work keeps you busy these days?"           │
-│  → LLM extracts Role, Industry, Seniority                      │
-│                                                                 │
-│  Turn 2: Track Split                                           │
-│  ┌──────────────┬────────────────┬─────────────────┐             │
-│  │  CXO Track   │ Investor Track │ Professional    │             │
-│  ├──────────────┼────────────────┼─────────────────┤             │
-│  │ Org queries  │ Trading prefs  │ Skill building  │             │
-│  └──────────────┴────────────────┴─────────────────┘             │
-│                                                                 │
-│  Turn 3: Life Event Probe                                        │
-│  Detects: New job, Marriage, Inheritance, House purchase       │
-│  → Switches from "Content-First" to "Marketplace-First"         │
-│                                                                 │
-│  Resolution: Product Recommendation via ChromaDB                 │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
+┌─────────────────────────────────────────────────────────────────────┐
+│                    THE 3-MINUTE DECISION FLOW                       │
+├─────────────────────────────────────────────────────────────────────┤
+│                                                                     │
+│  TURN 0 ─ Greeting & Profession Probe                               │
+│  ┌────────────────────────────────────────────────────────────┐    │
+│  │ 🤖 "What kind of work keeps you busy these days?"          │    │
+│  │                                                            │    │
+│  │ LLM Extraction (Llama 3.1 8b → JSON):                     │    │
+│  │   → role:       FUND_MANAGER / CXO / PROFESSIONAL          │    │
+│  │   → industry:   FINANCE / TECH / MANUFACTURING / etc.      │    │
+│  │   → seniority:  JUNIOR / MID / SENIOR / C-SUITE            │    │
+│  └────────────────────────────────────────────────────────────┘    │
+│                          │                                          │
+│                          ▼                                          │
+│  TURN 1 ─ Dynamic Track Branching                                   │
+│  ┌──────────────┬──────────────────┬────────────────────┐          │
+│  │  CXO TRACK   │  INVESTOR TRACK  │  PROFESSIONAL       │          │
+│  ├──────────────┼──────────────────┼────────────────────┤          │
+│  │ Org queries  │ Trading prefs    │ Skill building      │          │
+│  │ Board topics │ Sector exposure  │ Masterclass access  │          │
+│  │ M&A signals  │ Risk appetite    │ Certification paths │          │
+│  └──────────────┴──────────────────┴────────────────────┘          │
+│                          │                                          │
+│                          ▼                                          │
+│  TURN 2 ─ Life Event Probe                                          │
+│  ┌────────────────────────────────────────────────────────────┐    │
+│  │ Probes for: New Job · Marriage · Inheritance · Home Buy    │    │
+│  │                                                            │    │
+│  │ Detection triggers an immediate strategy switch:           │    │
+│  │   CONTENT-FIRST → MARKETPLACE-FIRST                        │    │
+│  └────────────────────────────────────────────────────────────┘    │
+│                          │                                          │
+│                          ▼                                          │
+│  RESOLUTION ─ ChromaDB Vector Match                                 │
+│  ┌────────────────────────────────────────────────────────────┐    │
+│  │ Profile vector → ET Product Knowledge Graph                │    │
+│  │ → Top-K similarity matches                                 │    │
+│  │ → Personalized payoff narrative generated                  │    │
+│  │ → Explains WHY this ET tool fits your exact situation      │    │
+│  └────────────────────────────────────────────────────────────┘    │
+│                                                                     │
+└─────────────────────────────────────────────────────────────────────┘
 ```
 
-**Dynamic Branching**:
-- Routes CXOs to organizational queries
-- Routes Investors to trading preferences
-- Routes Professionals to skill-building content
+### Live Session Example
 
-**Life Event Detection**:
-- Probes for major financial shifts (New job, marriage, inheritance)
-- Instantly pivots from "Content-First" to "Marketplace-First" recommendations
+```bash
+# ─── TURN 0 ─────────────────────────────────────────────────────────
 
-### 2. 🧭 Financial Life Navigator (Product Mapper)
+🤖  "What kind of work keeps you busy these days?"
+👤  "I'm a fund manager at Motilal Oswal, managing mid-cap equity"
 
-Maps user extracted profile against the entire ET ecosystem:
+    [Llama 3.1 8b JSON extraction]
+    → role:       FUND_MANAGER
+    → industry:   ASSET_MANAGEMENT
+    → seniority:  SENIOR
+    → track:      INVESTOR ✓
+
+# ─── TURN 1 ─────────────────────────────────────────────────────────
+
+🤖  "Are you tracking any upcoming IPOs or planning any
+     sector rotation in your current allocation?"
+👤  "Actually, I just got married and we're looking to buy
+     a house in Bangalore in the next year"
+
+    [Life event detector — Llama 3.3 70b]
+    ⚡  LIFE_EVENT_DETECTED: MARRIAGE
+    ⚡  LIFE_EVENT_DETECTED: HOME_PURCHASE
+    →   strategy pivot: CONTENT_FIRST → MARKETPLACE_FIRST
+
+# ─── RESOLUTION ──────────────────────────────────────────────────────
+
+    [ChromaDB vector similarity search]
+    →   ET_HDFC_HOME_LOAN_PARTNER     score: 0.94  ████████████░░
+    →   ET_GOAL_TRACKER_HOME          score: 0.89  ███████████░░░
+    →   ET_TAX_PLANNER_80C_HOUSING    score: 0.83  ██████████░░░░
+    →   ET_INSURANCE_TERM_LIFE        score: 0.79  █████████░░░░░
+    →   ET_SIP_CALCULATOR_DUAL_GOAL   score: 0.76  █████████░░░░░
+
+✅  Routing → Marketplace Agent + Goal Setup + Tax Planner
+🤖  "Congratulations on the wedding! Since you're planning a home
+     purchase in Bangalore, let me connect you with our HDFC partner
+     for pre-approved home loan rates, and set up a dual SIP goal
+     for your down payment. Your 80C housing deduction will also
+     save you ₹1.5L this year — want me to run the numbers?"
+```
+
+### Dynamic Branching Logic
+
+```mermaid
+flowchart TD
+    A[User Input] --> B[Llama 3.1 8b JSON Extraction]
+    B --> C{Role Classification}
+    C -->|CXO / Board| D[CXO Track\nOrg · M&A · Board]
+    C -->|Trader / Investor| E[Investor Track\nIPOs · Sectors · Risk]
+    C -->|Salaried / Professional| F[Professional Track\nSkills · Tax · SIP]
+    D & E & F --> G{Life Event Detected?}
+    G -->|Yes| H[Marketplace-First\nLoan · Insurance · Credit]
+    G -->|No| I[Content-First\nET Prime · Masterclass]
+    H & I --> J[ChromaDB Vector Search]
+    J --> K[Personalized Payoff Narrative]
+```
+
+---
+
+## 🤖 AI Concierge Chat
+
+The conversational heart of the platform. Users can query anything financial in plain language and receive contextual, profile-aware responses.
+
+```
+┌──────────────────────────────────────────────────────────────────────┐
+│  USER QUERY                         SYSTEM RESPONSE                  │
+├─────────────────────────────────────┼────────────────────────────────┤
+│  "How much should I invest in SIP   │  Personalized SIP amount based │
+│   for early retirement at 50?"      │  on age, income & risk profile │
+│                                     │  extracted from profiler       │
+├─────────────────────────────────────┼────────────────────────────────┤
+│  "Explain Section 80C deductions"   │  Section-wise breakdown:       │
+│                                     │  ELSS · PPF · LIC · FD         │
+│                                     │  ₹1.5L limit tracker shown     │
+├─────────────────────────────────────┼────────────────────────────────┤
+│  "Should I apply for NTPC Green     │  GMP analysis · Sub status     │
+│   IPO opening tomorrow?"            │  Historical comparison         │
+│                                     │  SEBI-compliant verdict        │
+├─────────────────────────────────────┼────────────────────────────────┤
+│  "What's my tax if I sell HDFC      │  Old vs New regime computation │
+│   stocks worth ₹5L this year?"      │  LTCG / STCG breakdown live    │
+├─────────────────────────────────────┼────────────────────────────────┤
+│  [Voice Input in Hindi]             │  Speech-to-text processing     │
+│  "मेरे लिए सबसे अच्छा SIP कौनसा है?"    │  Regional language support     │
+└──────────────────────────────────────────────────────────────────────┘
+```
+
+**Technical Highlights:**
+- Natural language processing via **Groq API (Llama 3.3 70b)**
+- Context-aware responses based on the user's profiler-extracted financial DNA
+- **Web Speech API** for real-time voice input and text-to-speech responses
+- Conversation memory across the session via **PostgreSQL (asyncpg)**
+- Real-time query suggestions and smart autocomplete
+
+---
+
+## 📈 IPO Command Center
+
+Never miss a market opportunity. The most comprehensive IPO tracking dashboard for Indian retail investors.
 
 ```mermaid
 flowchart LR
-    A[User Profile] --> B[ChromaDB Vector Search]
-    B --> C[ET Product Embeddings]
-    C --> D[Top K Matches]
-    D --> E[Personalized Payoff Narrative]
-    E --> F[ET Prime / ET Markets / Masterclasses]
-```
-
-**Capabilities**:
-- Uses ChromaDB for vector similarity searches
-- Generates personalized payoff narratives
-- Explains why specific ET tools fit exact user situations
-
-### 3. 🤖 AI Concierge (Conversational Finance)
-
-```
-┌─────────────────────────────────────────────────────────────┐
-│  USER INPUT                      │  SYSTEM RESPONSE          │
-├──────────────────────────────────┼───────────────────────────┤
-│  "How much should I invest in    │  → Personalized SIP       │
-│   SIP for retirement?"           │    recommendation based   │
-│                                  │    on age & risk profile  │
-├──────────────────────────────────┼───────────────────────────┤
-│  "Explain 80C deductions"        │  → Section-wise breakdown │
-│                                  │    with limit indicators  │
-├──────────────────────────────────┼───────────────────────────┤
-│  🎤 Voice Input                  │  → Speech-to-text query   │
-│                                  │    processing             │
-└─────────────────────────────────────────────────────────────┘
-```
-
-**Technical Highlights**:
-- Natural language processing simulation
-- Context-aware responses based on user profile
-- Voice input/output using Web Speech API
-- Real-time query suggestions
-
-### 4. 🔄 ET Ecosystem Cross-Sell Engine
-
-A background processing engine that ingests behavioral signals (pages read, time-on-site, click patterns) to trigger timely, context-aware upsells without disrupting the user experience.
-
-**Signal Processing**:
-- Page engagement tracking
-- Content consumption patterns
-- Feature usage analytics
-- Predictive churn indicators
-
-**Trigger Mechanisms**:
-- Context-aware product recommendations
-- Timely upgrade prompts
-- Feature discovery nudges
-
-### 5. 🏪 Services Marketplace Agent
-
-When an immediate financial need is detected (e.g., a "life event" like buying a house), the LangGraph orchestrator hands the conversation over to the Marketplace Agent, connecting the user with partner services (HDFC, Bajaj, SBI) for credit, loans, and insurance.
-
-**Integration Capabilities**:
-- Loan eligibility calculators
-- Insurance gap analysis
-- Credit score monitoring
-- Instant quote comparisons
-
-### 6. 📈 IPO Command Center
-
-```mermaid
-flowchart LR
-    A[IPO Listing] --> B{AI Analysis Engine}
-    B --> C[Grey Market Premium]
-    B --> D[Subscription Status]
-    B --> E[Recommendation]
+    A[IPO Listing] --> B{AI Analysis Engine\nLlama 3.3 70b}
+    B --> C[Grey Market\nPremium GMP]
+    B --> D[Subscription\nStatus Live]
+    B --> E[Historical\nPerformance]
     C & D & E --> F[Visual Dashboard]
-    F --> G[Subscribe/Avoid/Neutral]
+    F --> G{AI Verdict}
+    G -->|Strong Fundamentals| H[SUBSCRIBE]
+    G -->|Overvalued / Risk| I[AVOID]
+    G -->|Neutral Signal| J[NEUTRAL]
 ```
 
-**Features**:
-- Live IPO calendar with countdown timers
-- GMP tracking with trend indicators
-- Category-wise subscription (Retail/NII/QIB)
-- ASBA simulation with UPI integration
-- Historical performance analytics
-- SEBI-compliant AI recommendations
+**Feature Set:**
+- 📅 Live IPO calendar with countdown timers to open/close dates
+- 📊 Real-time GMP (Grey Market Premium) with trend direction indicators
+- 🔢 Category-wise subscription data — Retail (RII) · NII · QIB · Employee quota
+- 💳 ASBA simulation with UPI integration flow
+- 📉 Historical listing performance analytics and allotment probability estimator
+- 🤖 SEBI-compliant AI recommendation engine — Subscribe / Avoid / Neutral
+- 🔔 Subscription deadline alerts and real-time GMP movement notifications
+- 📋 Peer comparison across industry sector for fair value estimation
 
-### 3. 🎯 Goal Tracker
+---
+
+## 💰 Tax Planner
+
+India's most comprehensive in-app tax planning module — built from the ground up for Indian tax law.
+
+| Section | What It Covers | Calculation Logic |
+|---|---|---|
+| **Section 80C** | ELSS · PPF · LIC · Tax-saving FD · NSC · SCSS | ₹1.5L aggregate limit tracker with per-instrument utilization |
+| **Section 80D** | Health Insurance premiums | Self + Family + Parents · Senior citizen enhanced limit |
+| **HRA Exemption** | Rent deduction calculator | Metro (40%) vs Non-metro (50%) · Min of 3 conditions |
+| **LTCG** | Long-term capital gains | Equity (>1yr, 10% above ₹1L) · Property (20% with indexation) |
+| **STCG** | Short-term capital gains | Equity (15%) · Debt (slab rate) · Switching scenarios |
+| **Old vs New Regime** | Full tax regime comparison | Side-by-side liability computation with breakeven point |
+| **NPS (80CCD)** | National Pension System | Additional ₹50K deduction over 80C limit |
+
+```
+  TAX SAVING VISUALIZATION (Example — ₹15L Annual Income)
+
+  80C  ████████████████████  ₹1,50,000 / ₹1,50,000  Maxed ✅
+  80D  ████████░░░░░░░░░░░░  ₹25,000  / ₹50,000
+  HRA  ██████████████░░░░░░  ₹84,000  / ₹1,20,000
+  NPS  ████████████░░░░░░░░  ₹30,000  / ₹50,000
+  ─────────────────────────────────────────────────────────
+  Total Deductions: ₹2,89,000  │  Tax Saved: ₹86,700
+  Old Regime Tax:   ₹1,04,000  │  New Regime: ₹1,17,000
+                                →  Recommendation: OLD REGIME ✅
+```
+
+---
+
+## 🎯 Goal Tracker
+
+Visual, motivational, and mathematically precise goal-based financial planning.
 
 ```mermaid
 flowchart TB
     A[Goal Creation] --> B[SMART Parameters]
-    B --> C[Timeline]
-    B --> D[Target Amount]
-    B --> E[Risk Profile]
+    B --> C[Timeline\nMonths / Years]
+    B --> D[Target Amount\nWith Inflation]
+    B --> E[Risk Profile\nConservative · Balanced · Aggressive]
     C & D & E --> F[AI Projection Engine]
-    F --> G[Monthly SIP Required]
-    F --> H[Success Probability]
-    G & H --> I[Visual Progress]
-    I --> J[Milestone Alerts 🎉]
+    F --> G[Monthly SIP Required\nStep-up Calculation]
+    F --> H[Success Probability\nWith Confidence Band]
+    G & H --> I[Animated Progress Bar]
+    I --> J[Milestone Celebration at 25 · 50 · 75 · 100%]
 ```
 
-**Capabilities**:
-- Multiple goal tracking (Retirement, Education, Home, Emergency)
-- Visual progress with animated charts
-- Monthly SIP calculator with inflation adjustment
-- Milestone celebration system
-- Goal adjustment for life changes
+**Supported Goal Types:**
+- 🏠 **Home Purchase** — Down payment planning + EMI affordability check
+- 🎓 **Child's Education** — Inflation-adjusted corpus (8% education inflation rate)
+- 🧓 **Retirement** — Corpus required for desired monthly income post-retirement
+- 🏥 **Emergency Fund** — 6-month expense buffer with liquid fund recommendation
+- 💍 **Marriage** — Multi-year SIP planning with milestone checkpoints
+- ✈️ **Vacation / Custom** — Any short-to-mid term goal with target amount
 
-### 4. 💰 Tax Planner
-
-| Section | Feature | Logic |
-|---------|---------|-------|
-| **80C** | ELSS, PPF, LIC, FD | ₹1.5L limit tracker |
-| **80D** | Health Insurance | Multi-scenario calculations |
-| **HRA** | Rent Exemption | Metro vs Non-metro |
-| **LTCG** | Equity & Property | Indexation benefits |
-| **STCG** | Short-term gains | Tax rate application |
-
-### 5. 📰 ET Prime Content Hub
-
-```
-┌────────────────────────────────────────────────────────────┐
-│  CONTENT TIERING                                           │
-├────────────────────────────────────────────────────────────┤
-│  🔓 FREE TIER           │  ⭐ PRO/ELITE TIER               │
-│  • Market updates         │  • Exclusive analysis           │
-│  • Basic news             │  • Expert stock picks          │
-│                           │  • ET Now video content        │
-│                           │  • Sector deep dives           │
-│                           │  • Real-time alerts            │
-└────────────────────────────────────────────────────────────┘
-```
-
-### 6. 👨‍👩‍👧‍👦 Family Center (Elite Tier)
-
-- Consolidated family portfolio view
-- Goal sharing and collaborative planning
-- Role-based access control
-- Estate planning calculators
-- Family insurance gap analysis
+**Planning Intelligence:**
+- SIP amount calculated with step-up rate (typically 10–15% annually)
+- Inflation adjustment (6% default, fully customizable)
+- Return assumption by risk profile — 8% · 11% · 13% CAGR
+- Goal conflict detection — alerts when two goals strain the same SIP budget
+- Monthly SIP tracker with automated progress updates
 
 ---
 
-## 🎨 UI/UX Design System
+## 📰 ET Prime Content Hub
 
-### Glassmorphism Theme
-```css
-:root {
-  --glass: rgba(15, 23, 42, 0.6);
-  --glass-border: rgba(255, 255, 255, 0.1);
-  --accent: #38bdf8;
-  --primary: #0f172a;
-  --text-dim: #94a3b8;
-}
-```
-
-### Navigation Structure
+Tiered, personalized content delivery from India's most trusted financial media brand.
 
 ```
-┌────────────────────────────────────────────────────────────┐
-│  🏠 AI Concierge                    [🔍 Search]  [👤 User] │
-├────────────────────────────────────────────────────────────┤
-│  Dashboard │ AI Assistant │ Simulator │ IPO │ Tools ▼      │
-└────────────────────────────────────────────────────────────┘
-                           │
-        ┌──────────────────┼──────────────────┐
-        ▼                  ▼                  ▼
-   ┌─────────┐      ┌─────────┐       ┌──────────┐
-   │Tax      │      │Goal     │       │Document  │
-   │Planner  │      │Tracker  │       │Analyzer  │
-   └─────────┘      └─────────┘       └──────────┘
+┌──────────────────────────────────────────────────────────────────┐
+│  CONTENT TIERING MATRIX                                          │
+├──────────────────────────┬───────────────────────────────────────┤
+│  FREE TIER (Basic)       │  PRO / ELITE TIER                     │
+├──────────────────────────┼───────────────────────────────────────┤
+│  • Market wrap updates   │  • Exclusive analyst deep-dives       │
+│  • Basic news feed       │  • Expert stock picks with rationale  │
+│  • IPO calendar access   │  • ET Now video content integration   │
+│  • Standard indices      │  • Sector rotation intelligence       │
+│  • Educational articles  │  • Real-time AI-powered smart alerts  │
+│                          │  • Earnings season special reports    │
+│                          │  • Private summit event access        │
+│                          │  • Masterclass recordings on demand   │
+│                          │  • Portfolio stress-test reports      │
+└──────────────────────────┴───────────────────────────────────────┘
+```
+
+**Content Personalization Engine:**
+- Reads your profiler output and serves content matching your role, sector exposure, and goals
+- Tracks reading time, engagement depth, and click patterns to refine recommendations
+- Integrates with the Cross-Sell Engine to suggest relevant tool upgrades contextually
+
+---
+
+## 🔄 Cross-Sell Engine
+
+A sophisticated background processing layer that monitors behavioral signals and triggers context-aware upsells without disrupting user experience.
+
+**Signal Inputs:**
+
+| Signal Type | What Is Tracked | Action Triggered |
+|---|---|---|
+| Page Engagement | Time-on-page, scroll depth, return visits | Surface related premium content |
+| Content Consumption | Articles read, video watch %, topics saved | Recommend Masterclass or ET Prime |
+| Feature Usage | Calculator runs, IPO views, goal edits | Suggest Pro tier upgrade with ROI |
+| Search Patterns | Queries run, filters applied, saved IPOs | Trigger timely product discovery nudge |
+| Inactivity Signals | 7-day drop-off, reduced login frequency | Re-engagement nudge with value hook |
+| Life Event Signals | Goal edits suggesting a major financial shift | Marketplace pivot for loans/insurance |
+
+**Trigger Examples:**
+```
+User reads 3+ IPO articles in a week
+→ "Pro users get real-time GMP alerts. Upgrade?"
+
+User runs 80C calculator 5+ times
+→ "File your taxes directly with ET Tax Assist"
+
+User adds a Retirement goal
+→ "See how ET Elite users grow portfolios 2.3x faster"
+
+User visits Family Center (blocked)
+→ "Elite plan includes family-wide portfolio + estate planning"
 ```
 
 ---
 
-## 💎 Subscription Model
+## 🏪 Services Marketplace Agent
 
-### Tier Comparison
+When a life event is detected during the profiling conversation, the **LangGraph orchestrator hands off** to the Marketplace Agent — seamlessly connecting users with verified financial partners.
 
-| Feature | Basic (Free) | Pro (₹4,999/yr) | Elite (₹14,999/yr) |
-|---------|-------------|-----------------|-------------------|
-| **AI Queries/Day** | 5 | 50 | Unlimited |
-| **Portfolio Projections** | ❌ | ✅ | ✅ |
-| **Real-time Alerts** | ❌ | ✅ | ✅ |
-| **ET Prime Access** | ❌ | ✅ | ✅ |
-| **Family Portfolio** | ❌ | ❌ | ✅ |
-| **Private Summits** | ❌ | ❌ | ✅ |
-| **Masterclasses** | ❌ | ❌ | ✅ |
-| **Dedicated Support** | ❌ | ❌ | ✅ |
+**Partner Integrations:**
+
+```
+┌──────────────────────────────────────────────────────────────────┐
+│  CREDIT & LOANS          INSURANCE           INVESTMENTS          │
+│  ─────────────────        ─────────────────   ─────────────────   │
+│  🏦 HDFC Bank             🛡️ LIC India         📈 Zerodha        │
+│  🏦 SBI                   🛡️ HDFC ERGO         📈 Groww          │
+│  🏦 Bajaj Finserv         🛡️ Star Health        📈 Upstox        │
+│  🏦 Axis Bank             🛡️ Tata AIG           📈 Angel One      │
+│                                                                   │
+│  Features Available:                                              │
+│  → Instant loan eligibility (salary, CIBIL score, tenure)        │
+│  → Insurance gap analysis vs ideal recommended coverage          │
+│  → Real-time quote comparison across all providers               │
+│  → CIBIL / credit score monitoring with change alerts            │
+│  → Pre-approved offers surfaced at the right life moment         │
+└──────────────────────────────────────────────────────────────────┘
+```
 
 ---
 
-## 🛣️ Implementation Roadmap
+## 👨‍👩‍👧‍👦 Family Wealth Center *(Elite Tier)*
 
-### ✅ Phase 1: Foundation (Completed)
+Consolidated family-wide financial intelligence — from child education planning to multi-generational estate management.
+
+**Core Capabilities:**
+- 👁️ **Unified Family Dashboard** — All accounts, investments, and goals in one consolidated view
+- 🤝 **Collaborative Goal Planning** — Shared goals with contribution split visualization per member
+- 🔐 **Role-Based Access Control** — Primary holder / spouse / dependent / advisor access tiers
+- 📜 **Estate Planning Calculator** — Will estimation, nominee tracking, asset distribution modeling
+- 🛡️ **Family Insurance Gap Analysis** — Total coverage vs recommended coverage by family composition
+- 📊 **Generational Wealth Tracker** — Long-term projection for family corpus over 20–30 year horizon
+- 💬 **Dedicated Advisor Concierge** — Hybrid AI + human support exclusively for Elite tier families
+---
+
+## 🏗️ System Architecture
+
+### High-Level Platform Overview
+
 ```
-┌────────────────────────────────────────────────────────────┐
-│  ✅ React 18 Application Architecture                        │
-│  ✅ Glassmorphism Design System                             │
-│  ✅ Component Library (13 major components)                  │
-│  ✅ AI Concierge Chat Interface                             │
-│  ✅ IPO Command Center (GMP, Subscriptions)                │
-│  ✅ Goal Tracker with Visualizations                        │
-│  ✅ Tax Planner (80C, HRA, LTCG, STCG)                     │
-│  ✅ Document Analyzer Framework                             │
-│  ✅ Marketplace Integration                                 │
-│  ✅ ET Prime Content Hub                                    │
-│  ✅ Family Center (Elite Tier)                              │
-│  ✅ Subscription Management                                 │
-│  ✅ Responsive Design (Mobile/Tablet/Desktop)              │
-│  ✅ Protected Routes & Authentication                      │
-└────────────────────────────────────────────────────────────┘
+┌────────────────────────────────────────────────────────────────────────┐
+│                        ET AI CONCIERGE PLATFORM                        │
+├────────────────────────────────────────────────────────────────────────┤
+│                                                                        │
+│   📱 CLIENT LAYER                    🧠 AI ORCHESTRATION LAYER          │
+│   ┌──────────────────────┐           ┌──────────────────────────────┐  │
+│   │   React 18 Web App   │  HTTPS    │   LangGraph State Machine    │  │
+│   │   ──────────────────  │ ────────► │   ┌──────────┬───────────┐  │  │
+│   │   React Router DOM   │           │   │ Profiler │  Product  │  │  │
+│   │   Context API        │           │   │  Agent   │  Mapper   │  │  │
+│   │   Web Speech API     │           │   └────┬─────┴─────┬─────┘  │  │
+│   │   FileReader API     │           │        │           │         │  │
+│   └──────────────────────┘           │   ┌────▼───────────▼──────┐  │  │
+│                                      │   │   Groq Inference API  │  │  │
+│   🗄️  DATA PERSISTENCE LAYER          │   │   Llama 3.3 70b       │  │  │
+│   ┌──────────────────────┐           │   │   Llama 3.1 8b        │  │  │
+│   │   PostgreSQL         │ ◄────────►│   └───────────────────────┘  │  │
+│   │   ChromaDB           │           └──────────────────────────────┘  │
+│   │   Redis Cache        │                                              │
+│   │   localStorage       │           ⚡ CROSS-SELL ENGINE               │
+│   └──────────────────────┘           ┌──────────────────────────────┐  │
+│                                      │   Behavioural Signal Stream  │  │
+│   🔒 SECURITY LAYER                   │   → Engagement Analytics     │  │
+│   ┌──────────────────────┐           │   → Predictive Churn Model   │  │
+│   │   JWT Auth           │           │   → Marketplace Triggers     │  │
+│   │   HTTPS / TLS        │           └──────────────────────────────┘  │
+│   │   Data Encryption    │                                              │
+│   └──────────────────────┘                                              │
+│                                                                        │
+└────────────────────────────────────────────────────────────────────────┘
 ```
 
-### 🚀 Phase 2: AI Enhancement (Q2 2025)
-- OpenAI GPT-4 / Claude API integration
-- Real-time market data APIs (NSE/BSE)
-- Predictive portfolio analytics
-- AI-powered stock screener
-- Voice assistant (Hindi, Tamil, Telugu)
-- React Native mobile app
-- Broker API integrations (Zerodha, Upstox, etc.)
+### AI Backend — LangGraph Multi-Agent Design
 
-### 📊 Phase 3: Scale & Intelligence (Q3 2025)
 ```mermaid
 flowchart TB
-    A[Backend Infrastructure] --> B[Node.js + Express]
-    A --> C[MongoDB Database]
-    A --> D[Redis Cache]
-    
-    E[ML Pipeline] --> F[Recommendation Engine]
-    E --> G[Risk Analysis Model]
-    E --> H[Fraud Detection]
-    
-    I[New Features] --> J[Tax Filing Assistant]
-    I --> K[Crypto Portfolio]
-    I --> L[International Markets]
+    subgraph Client["📱 Entry Points"]
+        A[React 18 Web App]
+        B[Mobile App · Voice Input]
+    end
+
+    subgraph Orchestration["🧠 LangGraph State Orchestrator"]
+        C[Profiler Agent\n3-min conversation]
+        D[Product Mapper\nChromaDB search]
+        E[Cross-Sell Engine\nBehavioural signals]
+        F[Marketplace Agent\nLife-event handler]
+    end
+
+    subgraph Inference["⚡ LLM Inference — Groq API"]
+        G[Llama 3.3 70b\nReasoning · Narrative · Recommendations]
+        H[Llama 3.1 8b\nJSON Extraction · Classification]
+    end
+
+    subgraph Persistence["🗄️ Intelligence Stores"]
+        I[(PostgreSQL\nUser Profiles · Sessions)]
+        J[(ChromaDB\nET Product Knowledge Graph)]
+        K[(Redis\nSession Cache · Rate Limits)]
+    end
+
+    A & B --> Orchestration
+    C <--> G & H
+    D <--> J
+    E --> F
+    F --> G
+    Orchestration <--> I & K
 ```
 
-### 🏢 Phase 4: Enterprise (Q4 2025)
-- Family Office Suite
-- AI Estate Planning
-- Community Features (Forums, Q&A)
-- Enterprise API for Partners
-- White-label Solutions
+### Frontend Component Architecture
 
----
+```mermaid
+flowchart TB
+    subgraph Client["📱 Client Layer"]
+        A[React 18 Application]
+        B[React Router DOM v6]
+        C[Context API — Global State]
+    end
 
-## 🔧 Development Setup
+    subgraph Components["🧩 Feature Components"]
+        D[Dashboard]
+        E[AI Concierge Chat]
+        F[IPO Command Center]
+        G[Tax Planner]
+        H[Goal Tracker]
+        I[Document Analyzer]
+        J[Marketplace]
+        K[ET Prime Hub]
+        L[Family Center]
+        M[Portfolio Simulator]
+    end
 
-```bash
-# Prerequisites: Node.js ≥ 18, npm ≥ 9
+    subgraph State["💾 State Management"]
+        N[AuthContext — useAuth hook]
+        O[User Profile · Plan · Preferences]
+        P[Session Cache]
+    end
 
-# Clone & Install
-git clone https://github.com/team-agi/et-ai-concierge.git
-cd et-ai-concierge
-npm install
+    subgraph Storage["🗄️ Browser Persistence"]
+        Q[localStorage — Cross-session]
+        R[sessionStorage — Temporary]
+    end
 
-# Development
-npm run dev        # Vite dev server → localhost:5173
-
-# Production
-npm run build      # Optimized build in dist/
-npm run preview    # Preview production build
-```
-
----
-
-## 📈 Key Achievements
-
-### Technical Metrics
-- **Components Built**: 13 major feature components
-- **Lines of Code**: 15,000+ production-ready
-- **Routes**: 15 protected + 2 public routes
-- **Features**: 8 core modules, fully functional
-- **Design System**: Complete glassmorphism implementation
-- **Responsive**: Cross-device optimized
-
-### Business Impact
-- **Target Market**: 150M+ Indian retail investors
-- **TAM**: ₹5,000+ Cr opportunity
-- **Revenue Streams**: Subscriptions, Commissions, Ads
-- **User Segments**: 3 tiers (Basic, Pro, Elite)
-
----
-
-## 👥 Team AGI
-
-| Role | Expertise |
-|------|-----------|
-| **Frontend Engineers** | React, UI Architecture, State Management |
-| **UI/UX Designers** | Glassmorphism, Responsive Design, Animations |
-| **Finance Experts** | Tax Logic, Investment Algorithms, Compliance |
-| **Product Strategy** | Feature Roadmap, Market Analysis |
-
----
-
-## 📝 Component API Documentation
-
-### AuthContext
-```javascript
-const { 
-  user, 
-  isAuthenticated, 
-  currentPlan, 
-  login, 
-  logout 
-} = useAuth();
-```
-
-### Route Structure
-```
-/Public Routes
-├── /login          → Login.jsx
-└── /signup         → Signup.jsx
-
-/Protected Routes
-├── /               → Dashboard.jsx
-├── /concierge      → AI Concierge
-├── /simulator      → Portfolio Simulator
-├── /ipo            → IPO Center
-├── /tax-planner    → Tax Planner
-├── /goals          → Goal Tracker
-├── /documents      → Document Analyzer
-├── /marketplace    → Marketplace
-├── /et-prime       → ET Prime Content
-├── /family         → Family Center (Elite)
-└── /business-model → Revenue Info
+    A --> D & E & F & G & H & I & J & K & L & M
+    A --> B --> C --> N --> O --> Q & R
+    O --> P
 ```
 
 ---
 
-<div align="center">
+## 🛠️ Tech Stack
 
-### 🚀 Built with Passion by Team AGI
+### Complete Technology Matrix
 
-*Revolutionizing Personal Finance for India*
-      └─────────┘    └─────────┘   └──────────┘
-```
+| Layer | Technology | Version | Implementation Details |
+|---|---|---|---|
+| **Frontend Framework** | React | 18 | Functional components, hooks, Context API state management |
+| **Build Tool** | Vite | 5 | HMR, code splitting, optimized production bundles |
+| **Routing** | React Router DOM | v6 | Protected routes, lazy loading, nested layouts |
+| **Styling** | CSS3 + Variables | — | Glassmorphism design system, dark mode, responsive grid |
+| **Icons** | Lucide React | Latest | 500+ icons, consistent 1.5px stroke width |
+| **State Management** | React Context | — | useAuth hook, localStorage persistence layer |
+| **Voice Features** | Web Speech API | — | Speech recognition + speech synthesis (TTS) |
+| **Document Processing** | FileReader API | — | PDF and image upload + AI analysis pipeline |
+| **AI Orchestration** | LangGraph | Latest | Multi-agent state machine for conversational profiling |
+| **LLM — Reasoning** | Groq · Llama 3.3 70b | — | Main reasoning, narrative generation, recommendations |
+| **LLM — Extraction** | Groq · Llama 3.1 8b | — | JSON extraction, classification, structured output |
+| **Backend API** | FastAPI | Python 3.11 | ASGI framework, WebSocket, async request handling |
+| **Vector Search** | ChromaDB | Latest | ET Product Knowledge Graph embeddings + similarity search |
+| **Primary Database** | PostgreSQL | Latest | asyncpg driver, user profiles, session memory, audit logs |
+| **Caching** | Redis | Latest | Session cache, rate limiting, real-time data TTL management |
 
----
+### Frontend Architecture Layers
 
-## 🛠️ Technology Stack
-
-### Frontend Architecture
 ```
 ┌─────────────────────────────────────────────────────────┐
 │                    PRESENTATION LAYER                   │
 ├─────────────────────────────────────────────────────────┤
 │  React 18        │  Component-based UI architecture     │
-│  React Router    │  Client-side routing                 │
-│  Lucide Icons    │  Modern iconography                  │
-│  CSS3 Variables  │  Dynamic theming                     │
+│  React Router    │  Client-side SPA navigation          │
+│  Lucide Icons    │  Modern, consistent iconography      │
+│  CSS3 Variables  │  Dynamic theming + glassmorphism     │
 └─────────────────────────────────────────────────────────┘
-                           │
+                            │
 ┌─────────────────────────────────────────────────────────┐
 │                    STATE MANAGEMENT                     │
 ├─────────────────────────────────────────────────────────┤
-│  React Context   │  Global auth & user state            │
-│  useReducer      │  Complex form state                  │
-│  localStorage    │  Persistent session                  │
+│  React Context   │  Global auth, user profile, plan     │
+│  useReducer      │  Complex multi-step form state       │
+│  localStorage    │  Persistent cross-session data       │
 └─────────────────────────────────────────────────────────┘
-                           │
+                            │
 ┌─────────────────────────────────────────────────────────┐
-│                    DATA & APIs                          │
+│                    DATA & API LAYER                     │
 ├─────────────────────────────────────────────────────────┤
-│  Mock Data Layer │  Simulated backend responses         │
-│  FileReader API  │  Document processing                 │
-│  Web Speech API  │  Voice input/output                  │
+│  FastAPI Backend │  REST + WebSocket, async handlers    │
+│  FileReader API  │  Document upload and processing      │
+│  Web Speech API  │  Voice input and TTS output          │
 └─────────────────────────────────────────────────────────┘
 ```
 
-### Key Technologies
-| Category | Technology | Purpose |
-|----------|-----------|---------|
-| **Framework** | React 18 | UI Development |
-| **Build Tool** | Vite 5 | Fast development & building |
-| **Routing** | React Router DOM | SPA Navigation |
-| **Icons** | Lucide React | Beautiful icon system |
-| **Styling** | CSS3 + Variables | Dynamic theming |
-| **State** | React Context | Global state management |
-| **Storage** | localStorage | Client-side persistence |
+---
 
 ---
 
-## 📱 Screenshots
+## 🧭 Navigation Structure
 
-<!-- Add your screenshots below -->
-
-### 🏠 Dashboard
-![Dashboard Screenshot](screenshots/dashboard.png)
-> *Your financial command center - portfolio overview, quick actions, and smart insights*
-
-### 🤖 AI Concierge
-![AI Concierge Screenshot](screenshots/concierge.png)
-> *Conversational AI that understands your financial needs*
-
-### 📈 IPO Center
-![IPO Center Screenshot](screenshots/ipo.png)
-> *Never miss an opportunity - live GMP, subscriptions, and AI recommendations*
-
-### 🎯 Goal Tracker
-![Goal Tracker Screenshot](screenshots/goals.png)
-> *Visual goal tracking with milestone celebrations*
-
-### 🏪 Marketplace
-![Marketplace Screenshot](screenshots/marketplace.png)
-> *Curated financial products tailored to your profile*
-
----
-
-## 🚀 Getting Started
-
-### Prerequisites
-- Node.js 18+ 
-- npm 9+ or yarn 1.22+
-
-### Installation
-
-```bash
-# Clone the repository
-git clone https://github.com/your-org/et-ai-concierge.git
-
-# Navigate to project
-cd et-ai-concierge
-
-# Install dependencies
-npm install
-
-# Start development server
-npm run dev
 ```
+┌──────────────────────────────────────────────────────────────┐
+│  🏠 ET AI Concierge               [🔍 Search]  [👤 Profile] │
+├──────────────────────────────────────────────────────────────┤
+│  Dashboard │ AI Assistant │ Simulator │ IPO │ Tools ▼        │
+└──────────────────────────────────────────────────────────────┘
+                            │
+           ┌────────────────┼─────────────────┐
+           ▼                ▼                 ▼
+    ┌─────────────┐  ┌─────────────┐  ┌──────────────┐
+    │ Tax Planner │  │ Goal Tracker│  │ Doc Analyzer │
+    └─────────────┘  └─────────────┘  └──────────────┘
+           │                │                 │
+    ┌─────────────┐  ┌─────────────┐  ┌──────────────┐
+    │ Marketplace │  │  ET Prime   │  │ Family Center│
+    └─────────────┘  └─────────────┘  └──────────────┘
 
-The application will be available at `http://localhost:5173`
-
-### Build for Production
-
-```bash
-npm run build
 ```
-
-Output will be in `dist/` folder, ready for deployment.
-
----
-
-## 📊 System Architecture
-
-### High-Level Architecture
-```
-┌─────────────────────────────────────────────────────────────────────────┐
-│                         ET AI CONCIERGE PLATFORM                        │
-├─────────────────────────────────────────────────────────────────────────┤
-│                                                                         │
-│  ┌─────────────────┐         ┌─────────────────────────────────────┐ │
-│  │   USER LAYER    │         │        APPLICATION LAYER            │ │
-│  │                 │         │                                     │ │
-│  │  • Web Browser  │────────▶│  ┌──────────┐  ┌──────────────┐   │ │
-│  │  • Mobile App   │  HTTPS  │  │  React   │  │   Context    │   │ │
-│  │  • Tablet       │         │  │ Frontend │  │   Providers  │   │ │
-│  └─────────────────┘         │  └────┬─────┘  └──────┬───────┘   │ │
-│                              │       │               │            │ │
-│                              │  ┌────┴───────────────┴────┐       │ │
-│                              │  │    Component Layer       │       │ │
-│                              │  │  ┌─────────────────┐    │       │ │
-│                              │  │  │ Dashboard       │    │       │ │
-│                              │  │  │ AI Concierge    │    │       │ │
-│                              │  │  │ IPO Center      │    │       │ │
-│                              │  │  │ Tax Planner     │    │       │ │
-│                              │  │  │ Goal Tracker    │    │       │ │
-│                              │  │  │ Document Analyzer│   │       │ │
-│                              │  │  │ Marketplace     │    │       │ │
-│                              │  │  │ ET Prime        │    │       │ │
-│                              │  │  │ Family Center   │    │       │ │
-│                              │  │  └─────────────────┘    │       │ │
-│                              │  └──────────────────────────┘       │ │
-│                              │                                      │ │
-│                              │  ┌─────────────────────────────┐    │ │
-│                              │  │     DATA LAYER              │    │ │
-│                              │  │  ┌─────────────────────┐    │    │ │
-│                              │  │  │ localStorage        │    │    │ │
-│                              │  │  │ Session Management  │    │    │ │
-│                              │  │  │ User Preferences    │    │    │ │
-│                              │  │  │ Cached Data         │    │    │ │
-│                              │  │  └─────────────────────┘    │    │ │
-│                              │  └─────────────────────────────┘    │ │
-│                              └─────────────────────────────────────┘ │
-│                                                                         │
-└─────────────────────────────────────────────────────────────────────────┘
-```
-
-### Data Flow Diagram
-```
-User Action
-    │
-    ▼
-┌──────────────┐
-│   React      │◀─── State Update ───┐
-│  Component   │                      │
-└──────┬───────┘                      │
-       │                              │
-       │ User Interaction             │
-       ▼                              │
-┌──────────────┐                     │
-│   Context    │                     │
-│  Provider    │─────────────────────┘
-└──────┬───────┘
-       │
-       │ Persist/Retrieve
-       ▼
-┌──────────────┐
-│ localStorage │
-│   (Browser)  │
-└──────────────┘
-```
-
----
-
 ## 💎 Subscription Tiers
+```
+```
+<div align="center">
 
-### 🥉 ET Basic (Free)
-- 5 AI queries per day
-- Basic portfolio tracking
-- IPO calendar access
-- Standard market updates
+| Feature | 🥉 ET Basic | 🥈 ET Pro | 🥇 ET Elite |
+|---|:---:|:---:|:---:|
+| **Price** | Free Forever | ₹4,999/year | ₹14,999/year |
+| **AI Queries / Day** | 5 | 50 | ∞ Unlimited |
+| **Portfolio Tracking** | Basic | ✅ Advanced | ✅ Advanced |
+| **Portfolio Projections** | ❌ | ✅ | ✅ |
+| **Real-time Alerts** | ❌ | ✅ | ✅ |
+| **ET Prime Access** | ❌ | ✅ Full | ✅ Full |
+| **Advanced Tax Planning** | ❌ | ✅ | ✅ |
+| **Gap Analysis Engine** | ❌ | ✅ | ✅ |
+| **Family Portfolio** | ❌ | ❌ | ✅ |
+| **Private Summits** | ❌ | ❌ | ✅ |
+| **Masterclasses** | ❌ | ❌ | ✅ |
+| **Estate Planning Tools** | ❌ | ❌ | ✅ |
+| **Customer Support** | ❌ | Email | Hybrid AI + Human |
+| **Exclusive Research** | ❌ | ❌ | ✅ |
 
-### 🥈 ET Pro (₹4,999/year)
-*Everything in Basic, plus:*
-- 50 AI queries per day
-- Portfolio projections
-- Real-time alerts
-- ET Prime access
-- Gap analysis
-- Advanced tax planning
+</div>
 
-### 🥇 ET Elite (₹14,999/year)
-*Everything in Pro, plus:*
-- Unlimited AI queries
-- Family portfolio management
-- Private summits access
-- Masterclass sessions
-- Dedicated hybrid support
-- Exclusive research reports
+### 💰 Revenue Streams
+
+> 💳 **1. Subscription Revenue** > Basic / Pro / Elite tier fees
+> 
+> 🤝 **2. Marketplace Commission** > Loans · Insurance · Credit referral
+> 
+> 🎯 **3. Contextual Advertising** > Non-intrusive, profile-matched ads
+> 
+> 🏢 **4. Enterprise API Licensing** > B2B white-label platform access
+> 
+> 🎓 **5. Masterclass Fees** > Premium expert-led financial courses
+> 
+> 📊 **6. Data Intelligence** > Anonymized market trend analytics
 
 ```
-┌─────────────────────────────────────────────────────────┐
-│  COMPARISON CHART                                       │
-├────────────────────────┬──────────┬──────────┬──────────┤
-│  Feature               │  Basic   │   Pro    │  Elite   │
-├────────────────────────┼──────────┼──────────┼──────────┤
-│  AI Queries/Day        │    5     │    50    │    ∞     │
-│  Portfolio Projections │    ✗     │    ✓     │    ✓     │
-│  Real-time Alerts      │    ✗     │    ✓     │    ✓     │
-│  ET Prime Access       │    ✗     │    ✓     │    ✓     │
-│  Family Portfolio      │    ✗     │    ✗     │    ✓     │
-│  Private Summits       │    ✗     │    ✗     │    ✓     │
-│  Masterclasses         │    ✗     │    ✗     │    ✓     │
-│  Dedicated Support     │    ✗     │    ✗     │    ✓     │
-└────────────────────────┴──────────┴──────────┴──────────┘
 ```
-
 ---
 
 ## 🔐 Security & Compliance
 
-- **Data Encryption**: All sensitive data encrypted at rest
-- **Secure Authentication**: JWT-based session management
-- **Privacy First**: User data never sold to third parties
-- **SEBI Guidelines**: All investment advice SEBI-compliant
-- **GDPR Ready**: Data portability and deletion rights
+| Area | Implementation |
+|---|---|
+| 🔑 **Authentication** | JWT-based session management with refresh token rotation |
+| 🔒 **Data Encryption** | AES-256 encryption at rest · TLS 1.3 in transit |
+| 🚫 **Privacy First** | User data never sold or shared with third parties |
+| 📋 **SEBI Compliance** | All investment recommendations follow SEBI advisory guidelines |
+| 🌍 **GDPR Ready** | Full data portability, right to deletion, and consent management |
+| 🛡️ **Rate Limiting** | Redis-backed per-user API rate limiting by subscription tier |
+| 🔍 **Audit Logging** | All financial recommendations logged immutably for compliance |
 
 ---
 
-## 🌟 Unique Selling Points
+## 🚀 Quick Start
 
-### 1. 🇮🇳 India-First Design
-- Tax calculations tailored for Indian tax laws
-- Support for Indian financial instruments (PPF, NPS, ELSS, etc.)
-- Regional language support (Hindi, Tamil, Telugu coming soon)
-- UPI & ASBA integration for seamless transactions
+### Prerequisites
 
-### 2. 🤖 AI-Powered Insights
-- Natural language financial queries
-- Predictive portfolio analysis
-- Personalized goal recommendations
-- Document intelligence
+```
+Node.js  ≥ 18.0.0
+npm      ≥ 9.0.0     (or yarn ≥ 1.22)
+```
 
-### 3. 📰 ET Brand Trust
-- 33+ years of Economic Times financial expertise
-- Verified market data and analysis
-- Award-winning journalism integration
-- SEBI-registered advisory backing
+### Frontend Setup
 
-### 4. 🎯 Holistic Financial View
-- Not just stocks - goals, taxes, insurance, estate
-- Family-wide financial planning
-- Life-stage based recommendations
-- Integrated marketplace for execution
+```bash
+# 1. Clone the repository
+git clone https://github.com/team-agi/et-ai-concierge.git
+cd et-ai-concierge
+
+# 2. Install dependencies
+npm install
+
+# 3. Start development server
+npm run dev
+# → Application live at http://localhost:5173
+
+# 4. Production build
+npm run build       # Optimized output in dist/
+npm run preview     # Preview production build locally
+```
+
+### Backend Setup (FastAPI)
+
+```bash
+# Navigate to backend directory
+cd backend
+
+# Create and activate virtual environment
+python -m venv venv
+source venv/bin/activate        # Linux / Mac
+# venv\Scripts\activate         # Windows
+
+# Install Python dependencies
+pip install -r requirements.txt
+
+# Configure environment variables
+cp .env.example .env
+# → Fill in: GROQ_API_KEY, DATABASE_URL, CHROMA_PATH, REDIS_URL
+
+# Start FastAPI development server
+uvicorn main:app --reload --port 8000
+# → API live at http://localhost:8000
+# → Interactive docs at http://localhost:8000/docs
+```
+
+### Environment Variables
+
+```env
+# Groq LLM API
+GROQ_API_KEY=gsk_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+# PostgreSQL Database
+DATABASE_URL=postgresql+asyncpg://user:password@localhost:5432/etconcierge
+
+# ChromaDB Vector Store
+CHROMA_PERSIST_PATH=./chroma_data
+CHROMA_COLLECTION_NAME=et_products_v1
+
+# Redis Cache
+REDIS_URL=redis://localhost:6379/0
+
+# JWT Security
+JWT_SECRET_KEY=your_super_secure_secret_key_here
+JWT_ALGORITHM=HS256
+ACCESS_TOKEN_EXPIRE_MINUTES=60
+REFRESH_TOKEN_EXPIRE_DAYS=30
+```
+
+---
+
+## 📈 Business Impact
+
+### Target Market
+
+```
+Total Addressable Market
+─────────────────────────────────────────────────
+India's Personal Finance Market  →  ₹5,000+ Cr opportunity
+Indian Retail Investor Base      →  150M+ active investors
+ET Monthly Active Users          →  50M+ (leverage existing base)
+Target Conversion Basic → Pro    →  8–12% (industry benchmark)
+
+Revenue Projections (Year 3)
+─────────────────────────────────────────────────
+Pro Subscribers (500K × ₹4,999)  →  ₹250 Cr ARR
+Elite Subscribers (50K × ₹14,999)→  ₹75 Cr ARR
+Marketplace Commission (3–5%)    →  ₹40 Cr annually
+Total Projected ARR              →  ₹365 Cr+
+```
+
+### Competitive Differentiation
+
+| Platform | AI Advisory | Indian Tax | IPO Intelligence | Family Wealth | ET Brand |
+|---|:---:|:---:|:---:|:---:|:---:|
+| **ET AI Concierge** | ✅ Full | ✅ Complete | ✅ Real-time | ✅ Elite | ✅ |
+| Zerodha Kite | ❌ | ❌ | Partial | ❌ | ❌ |
+| Groww | Partial | Basic | Basic | ❌ | ❌ |
+| Paytm Money | Partial | Basic | ❌ | ❌ | ❌ |
+| Angel One | ❌ | ❌ | Partial | ❌ | ❌ |
+
+### Technical Achievements
+
+| Metric | Value |
+|---|---|
+| Major Components Built | 13 production-ready |
+| Total Lines of Code | 15,000+ |
+| Protected Routes | 15 + 2 public |
+| Core Feature Modules | 8 fully functional |
+| Design System | Complete glassmorphism |
+| Responsive Breakpoints | Mobile · Tablet · Desktop |
+| Hackathon Build Time | Intensive sprint |
 
 ---
 
 ## 🛣️ Roadmap
 
-### Q2 2025
-- [ ] Mobile app launch (iOS & Android)
-- [ ] Voice assistant in regional languages
-- [ ] AI-powered stock screener
-- [ ] Integration with 50+ brokers
+```
+Phase 1 — Foundation          ████████████████████  COMPLETE ✅
+Phase 2 — AI Enhancement      ████░░░░░░░░░░░░░░░░  Q2 2026  🚀
+Phase 3 — Scale & Intelligence ░░░░░░░░░░░░░░░░░░░░  Q3 2026  📅
+Phase 4 — Enterprise Suite    ░░░░░░░░░░░░░░░░░░░░  Q4 2026 🏢
+```
 
-### Q3 2025
-- [ ] Wealth management for HNIs
-- [ ] AI tax filing assistant
-- [ ] Crypto portfolio tracking
-- [ ] International market access
+### ✅ Phase 1 — Foundation (Complete)
 
-### Q4 2025
-- [ ] Family office features
-- [ ] AI estate planning
-- [ ] Smart notifications with ML
-- [ ] Community features
+- [x] React 18 application architecture (13 major components)
+- [x] Glassmorphism design system + full dark mode
+- [x] AI Concierge Chat Interface — text + voice input
+- [x] ET Welcome Concierge — 3-minute LangGraph profiler flow
+- [x] IPO Command Center (GMP, subscriptions, AI verdict)
+- [x] Goal Tracker with animated SIP visualizations
+- [x] Tax Planner (80C, 80D, HRA, LTCG, STCG, Old vs New Regime)
+- [x] Document Analyzer framework (PDF + image upload)
+- [x] Services Marketplace — HDFC, Bajaj, SBI integration
+- [x] ET Prime Content Hub — tiered free/pro/elite access
+- [x] Family Wealth Center — Elite tier, role-based access control
+- [x] Subscription management — Basic / Pro / Elite upgrade flows
+- [x] Protected routes + JWT authentication system
+- [x] Fully responsive — Mobile · Tablet · Desktop optimized
+
+### 🚀 Phase 2 — AI Enhancement (Q2 2026)
+
+- [ ] Real-time NSE / BSE live market data API feeds
+- [ ] Claude API / GPT-4 upgrade integration path
+- [ ] Predictive portfolio analytics with Monte Carlo stress testing
+- [ ] AI-powered stock screener (fundamentals + technical signals)
+- [ ] Voice assistant in Hindi, Tamil, Telugu, and Marathi
+- [ ] React Native mobile app — iOS + Android
+- [ ] Broker API integrations — Zerodha, Upstox, Groww, Angel One
+
+### 📊 Phase 3 — Scale & Intelligence (Q3 2026)
+
+- [ ] Full ML collaborative filtering recommendation engine
+- [ ] Risk analysis model with probability distributions
+- [ ] Fraud detection and portfolio anomaly alert system
+- [ ] AI tax filing assistant — ITR auto-preparation workflow
+- [ ] Crypto portfolio tracking — BTC, ETH, INR pairs
+- [ ] International markets access — US stocks and ETFs
+- [ ] Node.js + MongoDB migration for horizontal scale
+
+### 🏢 Phase 4 — Enterprise Suite (Q4 2026)
+
+- [ ] Family Office Suite for Ultra-HNI clients
+- [ ] AI-powered estate planning and will generation
+- [ ] Smart ML notification engine — right message, right moment
+- [ ] Community features — Q&A forums, peer portfolios, expert AMAs
+- [ ] Enterprise API licensing for financial services partners
+- [ ] White-label platform for banks and NBFCs
+
+---
+
+## 🌟 Why ET AI Concierge?
+
+```
+┌──────────────────────────────────────────────────────────────────┐
+│                                                                  │
+│  🇮🇳  INDIA-FIRST DESIGN                                          │
+│      → Tax logic built for Indian law: PPF · NPS · ELSS · HRA   │
+│      → UPI & ASBA integration for seamless transactions          │
+│      → Regional language voice support — Hindi, Tamil, Telugu    │
+│      → Metro vs Non-metro HRA calculations out of the box        │
+│      → Indian broker integrations: Zerodha · Groww · Upstox     │
+│                                                                  │
+│  🤖  AI-POWERED CORE INTELLIGENCE                                 │
+│      → Natural language financial queries — no jargon required   │
+│      → Predictive portfolio analytics with confidence intervals  │
+│      → Document intelligence — upload Form 16, get a tax plan   │
+│      → Voice-first — ask your question without typing            │
+│      → 3-minute profiler replaces a 30-minute advisor session    │
+│                                                                  │
+│  📰  33+ YEARS OF ET BRAND TRUST                                  │
+│      → Backed by Economic Times' journalism and market data      │
+│      → SEBI-registered advisory framework underpins all advice   │
+│      → Award-winning ET Prime content woven into the experience  │
+│      → Verified NSE/BSE data — no third-party scrapers          │
+│                                                                  │
+│  🎯  HOLISTIC — NOT JUST STOCKS                                   │
+│      → Goals · Taxes · Insurance · Estate · Family — all one app │
+│      → Life-stage aware — advice evolves as your life does       │
+│      → Marketplace integration — discover, compare, and execute  │
+│      → Cross-generational wealth from first SIP to estate plan   │
+│                                                                  │
+└──────────────────────────────────────────────────────────────────┘
+```
 
 ---
 
 ## 👥 Team AGI
 
-Built with ❤️ by **Team AGI** for The Economic Times
+<div align="center">
 
-| Role | Contribution |
-|------|-------------|
-| **Frontend Engineers** | React architecture, UI/UX implementation |
-| **AI Specialists** | Conversational AI, recommendation engine |
-| **Finance Experts** | Tax logic, investment algorithms, compliance |
-| **Design Team** | Glassmorphism UI, user experience flows |
+> *Built with ❤️ at an intensive hackathon.*
+> *Four disciplines. One shared mission: democratize financial intelligence for every Indian investor.*
 
----
+| Role | Expertise | Key Contributions |
+|---|---|---|
+| ⚛️ **Frontend Engineers** | React · Vite · CSS · State Management | Full application architecture, 13 components, routing, animations, responsive design |
+| 🎨 **UI/UX Designers** | Glassmorphism · Figma · Motion Design | Design system, user experience flows, micro-interactions, mobile-first layouts |
+| 🤖 **AI Specialists** | LangGraph · Groq · ChromaDB · FastAPI | Profiler state machine, vector search, LLM integration, WebSocket backend |
+| 📊 **Finance Experts** | Indian Tax Law · Investment Theory · SEBI | Tax calculation logic, goal algorithms, IPO analytics, SEBI compliance review |
 
-## 📞 Support & Contact
-
-- 🌐 Website: [https://etconcierge.economictimes.com](https://)
-- 📧 Email: support@etconcierge.com
-- 💬 Live Chat: Available in-app
-- 📱 Helpline: 1800-ET-HELP (1800-38-4357)
-
----
-
-## 📝 License
-
-© 2024 The Economic Times - Times Internet Limited. All rights reserved.
+</div>
 
 ---
 
 <div align="center">
 
-### 🚀 Ready to Transform Your Financial Future?
+---
 
-**[Get Started Today →](https://etconcierge.economictimes.com)**
+### 🚀 Built with Passion by Team AGI
 
-*Built by Team AGI • Powered by The Economic Times • Made in India 🇮🇳*
+**Revolutionizing Personal Finance for India** 🇮🇳
+
+*Economic Times Ecosystem · LangGraph AI · ChromaDB Vector Intelligence · Groq Inference*
+
+<br/>
+
+**[⭐ Star this repo](https://github.com/team-agi/et-ai-concierge)** &nbsp;·&nbsp;
+**[🍴 Fork it](https://github.com/team-agi/et-ai-concierge/fork)** &nbsp;·&nbsp;
+**[🐛 Report Bug](https://github.com/team-agi/et-ai-concierge/issues)** &nbsp;·&nbsp;
+**[💡 Request Feature](https://github.com/team-agi/et-ai-concierge/discussions)**
+
+<br/>
+
+---
+
+*© 2026 The Economic Times — Times Internet Limited. All rights reserved.*
+*Built by Team AGI · Made in India 🇮🇳*
 
 </div>
